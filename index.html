@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Narz Coaching · Flexible prep, natural results</title>
+<meta name="description" content="Online coaching at posing coaching ni Narz Angelo Alcaide. Flexible dieting (IIFYM), natural bodybuilding, at plano na kasya sa busy na buhay.">
+<meta name="theme-color" content="#0e0e10">
+<style>
+  :root{
+    --bg:#0e0e10; --card:#18181b; --card2:#202024; --line:#2c2c31;
+    --text:#f4f4f5; --muted:#a1a1aa; --accent:#e8b04b; --accent-ink:#1a1306;
+    --radius:20px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+  body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:560px;margin:0 auto;padding:0 20px}
+  section{padding-top:48px;padding-bottom:48px}
+  h1,h2,h3{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Inter,sans-serif;letter-spacing:-.02em;line-height:1.05}
+  h2{font-size:30px;font-weight:850;text-transform:uppercase;margin-bottom:8px}
+  .eyebrow{color:var(--accent);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
+  .sub{color:var(--muted);margin-bottom:24px}
+  a{color:inherit}
+
+  /* hero */
+  .hero{padding-top:28px;padding-bottom:40px}
+  .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px;font-size:14px;color:var(--muted)}
+  .top b{color:var(--text)}
+  .photo{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:4/5;background:linear-gradient(160deg,#2a2418,#121214 70%);margin-bottom:24px;display:grid;place-items:center}
+  .photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .photo .ph{color:#5c5240;font-weight:900;font-size:96px;letter-spacing:-.04em}
+  .photo .tag{position:absolute;left:14px;bottom:14px;background:rgba(14,14,16,.72);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:8px 12px;border-radius:999px;font-size:13px;font-weight:600}
+  .hero h1{font-size:44px;font-weight:900;text-transform:uppercase;margin-bottom:14px}
+  .hero h1 em{font-style:normal;color:var(--accent)}
+  .hero p{color:var(--muted);font-size:17px;margin-bottom:24px}
+  .btn{display:block;width:100%;text-align:center;border:0;border-radius:999px;padding:16px 20px;font-size:17px;font-weight:700;cursor:pointer;text-decoration:none;font-family:inherit}
+  .btn.primary{background:var(--accent);color:var(--accent-ink)}
+  .btn.ghost{background:var(--card2);color:var(--text);margin-top:10px}
+  .btn:active{transform:scale(.98)}
+
+  /* cards */
+  .grid{display:grid;gap:12px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+  .card h3{font-size:19px;font-weight:750;margin-bottom:6px}
+  .card p{color:var(--muted);font-size:15px}
+  .card .ico{font-size:26px;margin-bottom:10px}
+
+  /* plans */
+  .plan{position:relative}
+  .plan .row{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+  .plan .price{font-size:26px;font-weight:850;letter-spacing:-.02em;white-space:nowrap}
+  .plan .per{color:var(--muted);font-size:14px}
+  .plan .note{margin-top:6px;color:var(--muted);font-size:14px}
+  .plan.best{border-color:var(--accent);background:linear-gradient(180deg,#221c10,var(--card) 60%)}
+  .badge{display:inline-block;background:var(--accent);color:var(--accent-ink);font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 9px;border-radius:999px;margin-bottom:10px}
+  ul.inc{list-style:none;display:grid;gap:10px;margin-top:4px}
+  ul.inc li{display:flex;gap:10px;color:var(--text);font-size:15px}
+  ul.inc li::before{content:"✓";color:var(--accent);font-weight:900}
+
+  /* quiz */
+  .quiz{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:22px}
+  .bar{height:6px;background:var(--card2);border-radius:99px;overflow:hidden;margin-bottom:20px}
+  .bar i{display:block;height:100%;width:0;background:var(--accent);border-radius:99px;transition:width .3s ease}
+  .q h3{font-size:22px;font-weight:800;margin-bottom:6px}
+  .q .hint{color:var(--muted);font-size:14px;margin-bottom:16px}
+  .opts{display:grid;gap:10px}
+  .opt{background:var(--card2);border:1.5px solid transparent;color:var(--text);border-radius:16px;padding:15px 16px;font-size:16px;font-weight:600;text-align:left;cursor:pointer;font-family:inherit;display:flex;gap:12px;align-items:center}
+  .opt span.e{font-size:22px}
+  .opt small{display:block;color:var(--muted);font-weight:500;font-size:13px}
+  .opt.on{border-color:var(--accent);background:#2a2314}
+  .field{display:block;margin-bottom:12px}
+  .field span{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+  .field input,.field textarea{width:100%;background:var(--card2);border:1.5px solid var(--line);border-radius:14px;color:var(--text);padding:14px;font-size:16px;font-family:inherit}
+  .field input:focus,.field textarea:focus{outline:none;border-color:var(--accent)}
+  .field textarea{min-height:88px;resize:vertical}
+  .nav{display:flex;gap:10px;margin-top:18px}
+  .nav .btn{margin:0}
+  .nav .back{flex:0 0 auto;width:auto;padding:16px 20px;background:var(--card2);color:var(--text)}
+  .summary{background:var(--card2);border-radius:16px;padding:16px;font-size:14px;white-space:pre-wrap;color:var(--text);margin:14px 0;max-height:260px;overflow:auto}
+  .small{color:var(--muted);font-size:13px;text-align:center;margin-top:10px}
+
+  details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+  details+details{margin-top:10px}
+  summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:12px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";color:var(--accent);font-weight:900}
+  details[open] summary::after{content:"–"}
+  details p{color:var(--muted);margin-top:10px;font-size:15px}
+
+  footer{padding-top:40px;padding-bottom:60px;color:var(--muted);font-size:13px;text-align:center}
+  footer a{color:var(--text)}
+  .toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(120px);background:#f4f4f5;color:#111;padding:12px 18px;border-radius:999px;font-weight:600;font-size:14px;transition:transform .3s ease;z-index:9}
+  .toast.show{transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+
+<header class="wrap hero">
+  <div class="top"><b>@naarrzz</b><span>Online · Imus, Cavite</span></div>
+  <div class="photo">
+    <!-- Lagay ang photo mo bilang hero.jpg sa folder na ito -->
+    <img src="hero.jpg" alt="Narz on stage" onerror="this.remove()">
+    <div class="ph">NA</div>
+    <div class="tag">Natural bodybuilder · Classic Physique</div>
+  </div>
+  <div class="eyebrow">Online coaching · Posing coaching</div>
+  <h1>Flexible prep. <em>Real</em> results.</h1>
+  <p>Hindi mo kailangang isuko ang pagkaing gusto mo para gumanda ang katawan mo. Buong prep ko, flexible ako. Pasok sa macros, pasok sa buhay.</p>
+  <a class="btn primary" href="#apply">Apply for coaching</a>
+  <a class="btn ghost" href="#posing">Posing coaching</a>
+</header>
+
+<section class="wrap">
+  <div class="eyebrow">Paano ako mag-coach</div>
+  <h2>Hindi ito diet na bawal lahat</h2>
+  <p class="sub">Ang plano mo ay dapat kasya sa totoong buhay mo: school, trabaho, lakad, at Jollibee paminsan-minsan.</p>
+  <div class="grid">
+    <div class="card"><div class="ico">🍔</div><h3>Flexible dieting (IIFYM)</h3><p>Macros at micronutrients ang target, hindi listahan ng bawal. Kaya mong sundin kahit kumakain sa labas.</p></div>
+    <div class="card"><div class="ico">🧠</div><h3>Desisyon base sa data</h3><p>Weekly check-ins: timbang, photos, lakas, tulog. Hindi tayo nagbabago ng plano dahil lang sa isang tingin sa salamin.</p></div>
+    <div class="card"><div class="ico">⏱️</div><h3>Para sa busy</h3><p>Sabay kong ginawa ang school, internship, content at prep. Alam ko kung paano pagkasyahin ang training sa masikip na schedule.</p></div>
+    <div class="card"><div class="ico">🌿</div><h3>Natural</h3><p>Natural competitor ako at natural ang approach ko. Walang shortcut, malinaw na proseso lang.</p></div>
+  </div>
+</section>
+
+<section class="wrap" id="plans">
+  <div class="eyebrow">Online coaching</div>
+  <h2>Plans</h2>
+  <p class="sub">Lahat ng plans ay may parehong coaching. Mas mahaba ang plan, mas mababa ang bayad kada buwan.</p>
+  <div class="grid">
+    <div class="card plan">
+      <div class="row"><h3>1 Month</h3><div class="price">₱3,500</div></div>
+      <div class="note">Para subukan muna.</div>
+    </div>
+    <div class="card plan best">
+      <span class="badge">Pinaka-pinipili</span>
+      <div class="row"><h3>3 Months</h3><div><span class="price">₱9,000</span></div></div>
+      <div class="per">₱3,000 / month</div>
+      <div class="note">Pwedeng hulugan: ₱4,500 × 2, o ₱2,000 down + ₱3,500 × 2.</div>
+    </div>
+    <div class="card plan">
+      <div class="row"><h3>6 Months</h3><div class="price">₱16,500</div></div>
+      <div class="per">₱2,750 / month</div>
+      <div class="note">Pwedeng hulugan: ₱8,250 × 2, o ₱5,500 × 3.</div>
+    </div>
+    <div class="card plan">
+      <div class="row"><h3>1 Year</h3><div class="price">₱30,000</div></div>
+      <div class="per">₱2,500 / month</div>
+      <div class="note">Pwedeng hulugan: ₱7,500 kada quarter.</div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:14px">
+    <h3 style="margin-bottom:12px">Kasama sa coaching</h3>
+    <!-- TODO Narz: i-check kung tama ang listahan na ito -->
+    <ul class="inc">
+      <li>Custom macros base sa goal, katawan at schedule mo</li>
+      <li>Training program na naka-ayon sa ilang araw ang kaya mo</li>
+      <li>Weekly check-in at adjustments</li>
+      <li>Chat support para sa mga tanong mo</li>
+      <li>Form check sa videos mo</li>
+    </ul>
+  </div>
+</section>
+
+<section class="wrap" id="posing">
+  <div class="eyebrow">Posing coaching</div>
+  <h2>Ang posing nabubuo months before the show</h2>
+  <p class="sub">Para sa competitors at sa gustong matutong mag-pose. 1-on-1, online o in person.</p>
+  <div class="grid">
+    <div class="card plan">
+      <div class="row"><h3>1 Session</h3><div class="price">₱800</div></div>
+      <div class="note">45–60 mins.</div>
+    </div>
+    <div class="card plan">
+      <div class="row"><h3>4 Sessions</h3><div class="price">₱2,800</div></div>
+      <div class="per">₱700 / session</div>
+    </div>
+    <div class="card plan best">
+      <span class="badge">Pang-show</span>
+      <div class="row"><h3>Show Package</h3><div class="price">₱4,500</div></div>
+      <div class="note">4 sessions + unlimited video posing review + posing routine.</div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="apply">
+  <div class="eyebrow">Apply</div>
+  <h2>Tingnan natin kung bagay tayo</h2>
+  <p class="sub">6 na tanong lang, tap lang. Sa dulo, ise-send mo sa akin sa Instagram DM.</p>
+
+  <div class="quiz" id="quiz">
+    <div class="bar"><i id="bar"></i></div>
+    <div id="step"></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="eyebrow">FAQ</div>
+  <h2>Mga tanong</h2>
+  <details><summary>Beginner pa lang ako, pwede ba?</summary><p>Oo. Mas maganda pa nga, kasi maaga mong matututunan ang tamang habits.</p></details>
+  <details><summary>Kailangan ko bang mag-gym araw-araw?</summary><p>Hindi. Ibabase natin ang program sa ilang araw ang kaya mo talaga, kahit 3 days lang.</p></details>
+  <details><summary>Bawal ba ang fast food at sweets?</summary><p>Hindi. Flexible dieting ang approach ko. Basta pasok sa macros mo, pwede.</p></details>
+  <details><summary>Paano ang bayad?</summary><p>GCash, Maya o bank transfer. Pwedeng hulugan ang 3, 6 at 12-month plans.</p></details>
+</section>
+
+<footer class="wrap">
+  <p>Narz Angelo Alcaide · Natural bodybuilder · Online coach</p>
+  <p style="margin-top:6px"><a href="https://www.instagram.com/naarrzz/">Instagram</a> · <a href="https://www.tiktok.com/@naarrzz">TikTok</a></p>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const IG = "naarrzz";
+const Q = [
+  {k:"goal", t:"Ano ang main goal mo?", h:"Piliin ang pinakamalapit.", o:[
+    ["🔥","Magbawas ng taba","Fat loss / cut"],
+    ["💪","Lumaki at lumakas","Muscle gain / lean bulk"],
+    ["🏆","Mag-compete","Contest prep"],
+    ["🕺","Matutong mag-pose","Posing coaching"]]},
+  {k:"exp", t:"Gaano ka na katagal nagwo-workout?", o:[
+    ["🌱","Kakasimula lang","Below 6 months"],
+    ["📈","6 months to 2 years",""],
+    ["🏋️","2 years pataas",""],
+    ["🥇","Nakapag-compete na",""]]},
+  {k:"days", t:"Ilang araw ka kayang mag-train kada linggo?", o:[
+    ["3️⃣","3 days",""],["4️⃣","4 days",""],["5️⃣","5 days",""],["6️⃣","6 days pataas",""]]},
+  {k:"food", t:"Paano ka kumain ngayon?", o:[
+    ["🍱","Bahala na","Walang tracking"],
+    ["📱","Nagta-track minsan","May app pero hindi consistent"],
+    ["✅","Nagta-track ng macros",""],
+    ["😵","Nag-diet na, pero hindi sustainable",""]]},
+  {k:"plan", t:"Aling plan ang tinitingnan mo?", h:"Pwedeng hindi pa sigurado.", o:[
+    ["1️⃣","1 month","₱3,500"],
+    ["⭐","3 months","₱9,000, pwedeng hulugan"],
+    ["📆","6 months o 1 year","Pinakamababa kada buwan"],
+    ["🤔","Hindi pa sigurado","Gusto ko munang magtanong"]]},
+  {k:"info", form:true, t:"Last na! Sino ka?"}
+];
+const A = {};
+let i = 0;
+const $ = s => document.querySelector(s);
+
+function render(){
+  $("#bar").style.width = (i / Q.length * 100) + "%";
+  const el = $("#step");
+  if (i >= Q.length) return done(el);
+  const q = Q[i];
+  if (q.form){
+    el.innerHTML = `<div class="q"><h3>${q.t}</h3><p class="hint">Para alam ko kung sino ang kausap ko.</p>
+      <label class="field"><span>Pangalan</span><input id="f-name" autocomplete="name" value="${A.name||""}"></label>
+      <label class="field"><span>Edad</span><input id="f-age" inputmode="numeric" value="${A.age||""}"></label>
+      <label class="field"><span>Kahit ano pang gusto mong sabihin (injuries, schedule, show date)</span><textarea id="f-note">${A.note||""}</textarea></label>
+      <div class="nav"><button class="btn back" onclick="back()">←</button><button class="btn primary" onclick="finish()">Tapos na</button></div></div>`;
+    return;
+  }
+  el.innerHTML = `<div class="q"><h3>${q.t}</h3>${q.h?`<p class="hint">${q.h}</p>`:`<p class="hint">Tap mo lang.</p>`}
+    <div class="opts">${q.o.map((o,n)=>`<button class="opt${A[q.k]===o[1]?" on":""}" onclick="pick(${n})"><span class="e">${o[0]}</span><span>${o[1]}${o[2]?`<small>${o[2]}</small>`:""}</span></button>`).join("")}</div>
+    ${i>0?`<div class="nav"><button class="btn back" onclick="back()">← Back</button></div>`:""}</div>`;
+}
+function pick(n){
+  const q = Q[i]; A[q.k] = q.o[n][1];
+  document.querySelectorAll(".opt").forEach((b,m)=>b.classList.toggle("on", m===n));
+  setTimeout(()=>{ i++; render(); }, 180);
+}
+function back(){ saveForm(); i = Math.max(0, i-1); render(); }
+function saveForm(){
+  if (!$("#f-name")) return;
+  A.name = $("#f-name").value.trim(); A.age = $("#f-age").value.trim(); A.note = $("#f-note").value.trim();
+}
+function finish(){
+  saveForm();
+  if (!A.name){ toast("Pakilagay ang pangalan mo"); $("#f-name").focus(); return; }
+  i++; render();
+}
+function message(){
+  return `Hi Narz! Interested ako sa coaching 🙌
+
+Pangalan: ${A.name}${A.age?`, ${A.age}`:""}
+Goal: ${A.goal}
+Experience: ${A.exp}
+Training days: ${A.days}
+Pagkain ngayon: ${A.food}
+Plan: ${A.plan}${A.note?`
+Notes: ${A.note}`:""}`;
+}
+function done(el){
+  el.innerHTML = `<div class="q"><h3>Ayos, ${A.name.split(" ")[0]}! 🔥</h3>
+    <p class="hint">Ito ang message mo. Tap ang button, naka-copy na ito, tapos i-paste mo lang sa DM ko.</p>
+    <div class="summary">${message().replace(/</g,"&lt;")}</div>
+    <button class="btn primary" onclick="send()">Copy at buksan ang IG DM</button>
+    <button class="btn ghost" onclick="i=0;render()">Ulitin</button>
+    <p class="small">Sasagot ako sa loob ng 24 hours.</p></div>`;
+}
+async function send(){
+  try { await navigator.clipboard.writeText(message()); toast("Copied! I-paste mo sa DM"); }
+  catch(e){ toast("Pakikopya ang message sa itaas"); }
+  setTimeout(()=>{ location.href = `https://ig.me/m/${IG}`; }, 700);
+}
+let tt;
+function toast(t){ const el=$("#toast"); el.textContent=t; el.classList.add("show"); clearTimeout(tt); tt=setTimeout(()=>el.classList.remove("show"),2200); }
+render();
+</script>
+</body>
+</html>
