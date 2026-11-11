@@ -191,9 +191,9 @@ section{padding-top:84px;padding-bottom:84px}
 /* faq */
 .faq{border-top:1px solid var(--line)}
 .faq details{border-bottom:1px solid var(--line)}
-.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;padding:20px 0;font-weight:600;font-size:17px}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:20px 0;font-weight:600;font-size:17px}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"";width:12px;height:12px;flex:0 0 12px;margin-top:6px;background:linear-gradient(var(--ink),var(--ink)) center/100% 1.5px no-repeat,linear-gradient(var(--ink),var(--ink)) center/1.5px 100% no-repeat;transition:transform .25s var(--ease)}
+.faq summary::after{content:"";width:14px;height:14px;flex:0 0 14px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M7 0v14M0 7h14' stroke='%23141414' stroke-width='2'/%3E%3C/svg%3E") center/14px 14px no-repeat;transition:transform .25s var(--ease)}
 .faq details[open] summary::after{transform:rotate(45deg)}
 .faq p{padding:0 0 20px;color:var(--ink-2);max-width:60ch}
 
@@ -224,9 +224,11 @@ footer .big span{color:var(--accent)}
 .stack h3{font-family:var(--display);font-stretch:85%;font-weight:750;font-size:23px;line-height:1.1;margin-bottom:4px}
 .stack p{color:var(--ink-2);font-size:15.5px}
 /* plans width on desktop */
-.plans,.day-note,.panel>.muted{max-width:680px}
+.panel{max-width:680px;margin-left:auto;margin-right:auto}
+.seg-wrap{text-align:center}
+#rates .pay-note{text-align:center}
 /* guarantee */
-.guarantee{margin-top:30px;max-width:680px;border:1.5px solid var(--paper);padding:22px}
+.guarantee{margin-top:30px;border:1.5px solid var(--paper);padding:22px}
 .guarantee .label{color:var(--accent);display:block;margin-bottom:10px}
 .guarantee h3{font-family:var(--display);font-stretch:85%;font-weight:750;font-size:24px;line-height:1.1;margin-bottom:10px}
 .guarantee p{color:#d8d3c8;font-size:15.5px}
@@ -345,11 +347,11 @@ footer .big span{color:var(--accent)}
       <h2 class="display" style="margin-bottom:28px">Mas mahaba,<br>mas sulit.</h2>
       <figure class="shot"><img src="gym.jpg" alt="Narz sa gym, nagpo-posing" loading="lazy" width="1200" height="1200"></figure>
 
-      <div class="seg" role="tablist" data-i="0" id="seg">
+      <div class="seg-wrap"><div class="seg" role="tablist" data-i="0" id="seg">
         <span class="thumb"></span>
         <button role="tab" aria-selected="true" data-p="0">Online coaching</button>
         <button role="tab" aria-selected="false" data-p="1">Posing</button>
-      </div>
+      </div></div>
 
       <div class="panel" id="p0">
         <div class="plans">
