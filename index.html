@@ -498,8 +498,8 @@ const L = "ABCDE";
 
 function head(){
   const n = Math.min(i + 1, Q.length);
-  return `<div class="q-top"><span class="q-count">${String(n).padStart(2,"0")} / ${String(Q.length).padStart(2,"0")}</span>
-    <button class="q-back" onclick="back()" ${i===0?"disabled":""}>← Bumalik</button></div>
+  return `<div class="q-top"><button class="q-back" onclick="back()" ${i===0?"disabled":""}>← Back</button>
+    <span class="q-count">${String(n).padStart(2,"0")} / ${String(Q.length).padStart(2,"0")}</span></div>
     <div class="prog"><i style="width:${(i/Q.length)*100}%"></i></div>`;
 }
 function render(){
@@ -543,7 +543,7 @@ Style: ${A.style}
 Plan: ${A.plan}${A.note?`\nNotes: ${A.note}`:""}`;
 }
 function done(el){
-  el.innerHTML = `<div class="fade"><div class="q-top"><span class="q-count">Tapos na</span><button class="q-back" onclick="back()">← Bumalik</button></div>
+  el.innerHTML = `<div class="fade"><div class="q-top"><button class="q-back" onclick="back()">← Back</button><span class="q-count">Tapos na</span></div>
     <div class="prog"><i style="width:100%"></i></div>
     <p class="q-title">Salamat, ${esc(A.name.split(" ")[0])}.</p>
     <p class="q-hint">Send mo lang 'to sa DM ko. Pag tap mo ng button, naka-copy na yung message tapos magbubukas yung app. Paste mo lang.</p>
