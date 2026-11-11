@@ -8,6 +8,7 @@
 <meta name="description" content="Online coaching at posing coaching ni Narz Angelo Alcaide. Flexible dieting, natural bodybuilding, at plan na kasya sa totoong buhay mo.">
 <meta name="theme-color" content="#f2efe8">
 <meta property="og:title" content="Narz — Online Coaching at Posing">
+<meta property="og:image" content="https://naarrzz.github.io/coaching/hero.jpg">
 <meta property="og:description" content="Kumain ka. Basta pasok pa rin sa macros. Flexible prep para sa busy na tao.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,10 +33,10 @@ button{font:inherit;color:inherit}
 @media (min-width:720px){:root{--pad:40px}}
 
 /* type */
-.display{font-family:var(--display);font-stretch:68%;font-weight:850;text-transform:uppercase;line-height:.88;letter-spacing:-.01em}
+.display{font-family:var(--display);font-stretch:72%;font-weight:800;line-height:.98;letter-spacing:-.015em}
 .label{font-family:var(--display);font-stretch:100%;font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
 .muted{color:var(--muted)}
-h2.display{font-size:clamp(44px,11vw,88px)}
+h2.display{font-size:clamp(34px,8vw,56px)}
 
 /* header */
 .bar{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid transparent;transition:border-color .2s}
@@ -52,11 +53,12 @@ h2.display{font-size:clamp(44px,11vw,88px)}
 /* hero */
 .hero{padding-top:28px;padding-bottom:56px}
 .hero .kicker{display:flex;justify-content:space-between;border-top:1.5px solid var(--ink);padding-top:10px;margin-bottom:22px}
-.hero h1{font-size:clamp(64px,19.5vw,220px)}
-.hero h1 .a{color:var(--accent)}
-.hero h1 .sub{display:block;font-size:.5em;line-height:.95;margin-top:.12em;font-stretch:72%}
-.hero-grid{display:grid;gap:28px;margin-top:28px}
-@media (min-width:860px){.hero-grid{grid-template-columns:1.1fr .9fr;align-items:end}}
+.hero h1{font-size:clamp(60px,18vw,104px);text-transform:uppercase;line-height:.88}
+.hero h1 .a{color:var(--accent);display:block}
+.hero h1 .sub{display:block;font-size:.46em;line-height:.95;margin-top:.12em;font-stretch:72%}
+.hero-grid{display:grid;gap:24px;grid-template-areas:"h" "v" "c"}
+.hero-h{grid-area:h}.hero-v{grid-area:v}.hero-c{grid-area:c}
+@media (min-width:860px){.hero-grid{grid-template-columns:1fr .85fr;grid-template-areas:"h v" "c v";column-gap:56px;row-gap:28px;align-items:end}.hero-h{align-self:end}.hero-c{align-self:start}.hero-v{max-height:78vh}}
 .hero .lede{font-size:19px;line-height:1.45;max-width:30ch}
 .hero .lede b{font-weight:600}
 .cta-row{display:flex;flex-wrap:wrap;gap:14px 22px;align-items:center;margin-top:26px}
@@ -68,7 +70,7 @@ h2.display{font-size:clamp(44px,11vw,88px)}
 .link{font-weight:600;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1.5px}
 
 .frame{position:relative;aspect-ratio:4/5;background:var(--paper-2);overflow:hidden}
-.frame img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;object-position:50% 0%}
+.frame img,.frame video{position:relative;z-index:1;display:block;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
 .frame figcaption{z-index:2}
 .creds{list-style:none;margin-top:28px;border-top:1px solid var(--line)}
 .creds li{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
@@ -81,8 +83,9 @@ h2.display{font-size:clamp(44px,11vw,88px)}
 
 /* ticker */
 .ticker{border-top:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);overflow:hidden;white-space:nowrap;background:var(--paper)}
-.ticker div{display:inline-flex;gap:28px;padding:12px 0;animation:tick 32s linear infinite}
-.ticker span{font-family:var(--display);font-stretch:68%;font-weight:800;font-size:22px;text-transform:uppercase}
+.ticker .track{display:flex;width:max-content;animation:tick var(--dur,32s) linear infinite}
+.ticker .grp{display:flex;flex:none;gap:28px;padding:12px 28px 12px 0}
+.ticker span{font-family:var(--display);font-stretch:72%;font-weight:750;font-size:18px;text-transform:uppercase}
 .ticker i{color:var(--accent);font-style:normal}
 @keyframes tick{to{transform:translateX(-50%)}}
 
@@ -123,7 +126,7 @@ section{padding-top:84px;padding-bottom:84px}
 .plan .was{grid-area:was;text-align:right;color:#8a857b;font-size:14px;font-variant-numeric:tabular-nums}
 .plan .was s{text-decoration-thickness:1.5px;font-size:15px}
 .plan .day{color:var(--accent);font-weight:700;font-size:16px}
-.day-note{margin-top:22px;font-family:var(--display);font-stretch:80%;font-weight:750;font-size:22px;line-height:1.1}
+.day-note{margin-top:22px;font-family:var(--display);font-stretch:85%;font-weight:700;font-size:20px;line-height:1.2}
 .day-note span{color:var(--accent)}
 .plan h3{grid-area:name;align-self:center}.plan .price{grid-area:price}.plan .save{grid-area:save}.plan .terms{grid-area:terms;margin-top:8px}.plan .tag{grid-area:tag}
 .plan h3{font-family:var(--display);font-stretch:85%;font-weight:750;font-size:24px;line-height:1.1}
@@ -159,7 +162,7 @@ section{padding-top:84px;padding-bottom:84px}
 .q-back:disabled{visibility:hidden}
 .prog{height:3px;background:var(--line);margin-bottom:26px}
 .prog i{display:block;height:100%;background:var(--accent);width:0;transition:width .4s var(--ease)}
-.q-title{font-family:var(--display);font-stretch:80%;font-weight:800;font-size:clamp(30px,7vw,40px);line-height:1;text-transform:uppercase;margin-bottom:8px}
+.q-title{font-family:var(--display);font-stretch:85%;font-weight:750;font-size:clamp(24px,5.6vw,30px);line-height:1.1;margin-bottom:8px}
 .q-hint{color:var(--muted);font-size:14.5px;margin-bottom:20px}
 .opts{display:grid;gap:8px}
 .opt{display:grid;grid-template-columns:30px 1fr;align-items:center;gap:12px;text-align:left;background:transparent;border:1.5px solid var(--line);padding:14px 14px;cursor:pointer;transition:border-color .15s,background .15s,transform .12s var(--ease)}
@@ -210,7 +213,7 @@ footer .big span{color:var(--accent)}
 .after b{font-weight:600}
 /* story */
 .story{display:grid;gap:22px}
-.story h2{font-size:clamp(40px,10vw,76px)}
+.story h2{font-size:clamp(32px,7.5vw,52px)}
 .story p{font-size:17px;max-width:56ch;margin-bottom:14px;color:var(--ink-2)}
 @media (min-width:860px){.story{grid-template-columns:1fr 1fr;align-items:start}}
 /* stack */
@@ -225,7 +228,7 @@ footer .big span{color:var(--accent)}
 /* guarantee */
 .guarantee{margin-top:30px;max-width:680px;border:1.5px solid var(--paper);padding:22px}
 .guarantee .label{color:var(--accent);display:block;margin-bottom:10px}
-.guarantee h3{font-family:var(--display);font-stretch:80%;font-weight:800;font-size:28px;line-height:1.02;text-transform:uppercase;margin-bottom:10px}
+.guarantee h3{font-family:var(--display);font-stretch:85%;font-weight:750;font-size:24px;line-height:1.1;margin-bottom:10px}
 .guarantee p{color:#d8d3c8;font-size:15.5px}
 /* ps */
 .ps{margin-top:44px;padding:22px;border:1.5px solid var(--ink);max-width:680px}
@@ -263,15 +266,13 @@ footer .big span{color:var(--accent)}
 <main id="top">
   <div class="container hero">
     <div class="kicker label"><span>Online coaching</span><span>Natural bodybuilding</span></div>
-    <h1 class="display">Kumain ka.<span class="sub">Basta pasok pa rin <span class="a">sa macros.</span></span></h1>
-
     <div class="hero-grid">
-      <figure class="frame reveal">
-        <img src="hero.jpg" alt="Narz, natural bodybuilder" width="1050" height="1400" fetchpriority="high">
-        <div class="mono" aria-hidden="true">N</div>
+      <h1 class="display hero-h">Kumain ka.<span class="sub">Basta pasok pa rin <span class="a">sa macros.</span></span></h1>
+      <figure class="frame hero-v">
+        <video src="hero.mp4" poster="hero-poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="Narz, natural bodybuilder, nagpo-pose"></video>
         <figcaption><span>Natural champion</span><span>Cavite, PH</span></figcaption>
       </figure>
-      <div class="reveal">
+      <div class="hero-c">
         <p class="lede">Hi, ako si Narz. Buong prep ko, <b>flexible dieting lang</b>. May burger, may ice cream, basta pasok sa macros. Kahit sabay yung school, work, at content, kinaya. Ganito rin yung ituturo ko sa'yo.</p>
         <div class="cta-row">
           <a class="btn" href="#apply">Mag-apply <span class="arr">→</span></a>
@@ -285,10 +286,9 @@ footer .big span{color:var(--accent)}
     </div>
   </div>
 
-  <div class="ticker" aria-hidden="true"><div>
-    <span>Flexible dieting</span><i>/</i><span>Weekly check-ins</span><i>/</i><span>Natural</span><i>/</i><span>Posing</span><i>/</i><span>Para sa busy</span><i>/</i>
-    <span>Flexible dieting</span><i>/</i><span>Weekly check-ins</span><i>/</i><span>Natural</span><i>/</i><span>Posing</span><i>/</i><span>Para sa busy</span><i>/</i>
-  </div></div>
+  <div class="ticker" aria-hidden="true"><div class="track"><div class="grp">
+    <span>Flexible dieting</span><i>/</i><span>Weekly check-ins</span><i>/</i><span>Natural</span><i>/</i><span>Posing</span><i>/</i><span>Meal plan</span><i>/</i><span>Para sa busy</span><i>/</i>
+  </div></div></div>
 
   <section class="container">
     <div class="sec-head label"><span>Sound familiar?</span><span>01</span></div>
@@ -447,7 +447,7 @@ footer .big span{color:var(--accent)}
       <details><summary>"Wala akong time mag-workout."</summary><p>Hindi mo kailangan tumira sa gym. Kahit 3 days a week lang, dun natin ibabase yung program mo.</p></details>
       <details><summary>"Mahilig ako kumain, hindi ko kaya mag-diet."</summary><p>Good, kasi hindi 'to yung diet na puro bawal. Rice? Pwede. Fast food? Pwede. Dessert? Pwede. Basta pasok sa macros mo, at tuturuan kita kung paano.</p></details>
       <details><summary>"Ayaw ko na mag-isip, pwede bang meal plan na lang?"</summary><p>Pwede! Kung mas gusto mo na sabihin ko na lang kung ano kakainin mo, gagawan kita ng meal plan na pasok na sa macros mo. Pwede rin natin palitan anytime kung gusto mo na maging flexible.</p></details>
-      <details><summary>"Beginner pa lang ako."</summary><p>Mas okay nga yun, kasi maaga mong matututunan yung tamang habits bago ka masanay sa mali.</p></details>
+      <details><summary>"Beginner pa lang ako / hindi pa ako nagwo-workout."</summary><p>Mas okay nga yun, kasi maaga mong matututunan yung tamang habits bago ka masanay sa mali. Start tayo from zero, step by step.</p></details>
       <details><summary>"Online lang ba?"</summary><p>Yes, online yung coaching kaya kahit saan ka sa Pilipinas. Yung posing sessions, pwedeng online / in person sa Cavite.</p></details>
       <details><summary>"Paano kung hindi pala para sa akin?"</summary><p>May 14-day guarantee. Sa first 14 days, kung feel mo hindi tayo bagay, full refund.</p></details>
       <details><summary>"Paano yung payment?"</summary><p>GCash, Maya, or bank transfer. Pwedeng installment yung 3, 6, at 12-month plans.</p></details>
@@ -480,14 +480,14 @@ const Q = [
   {k:"goal", t:"Ano ang goal mo?", h:"Piliin ang pinakamalapit.", o:[
     ["Magbawas ng taba","Cut / fat loss"],["Lumaki at lumakas","Lean bulk / muscle gain"],["Mag-compete","Contest prep"],["Matutong mag-pose","Posing coaching"]]},
   {k:"exp", t:"Gaano ka na katagal nagwo-workout?", o:[
-    ["Kakasimula lang","Below 6 months"],["6 months to 2 years",""],["2 years pataas",""],["Nakapag-compete na",""]]},
-  {k:"days", t:"Ilang days ka kayang mag-train per week?", h:"Yung totoo ha.", o:[
+    ["Hindi pa ako nagwo-workout","Start tayo from zero"],["Kakasimula lang","Below 6 months"],["6 months to 2 years",""],["2 years pataas",""],["Nakapag-compete na",""]]},
+  {k:"days", t:"Ilang days mo kaya mag-train per week?", h:"Yung totoo ha.", o:[
     ["3 days",""],["4 days",""],["5 days",""],["6 days pataas",""]]},
   {k:"food", t:"Paano ka kumain ngayon?", o:[
     ["Bahala na","Walang tracking"],["Nagta-track minsan","Hindi consistent"],["Nagta-track ng macros",""],["Nag-diet na dati pero hindi tumagal",""]]},
   {k:"style", t:"Anong style ang gusto mo?", o:[
     ["Flexible macros","Ako bahala kung ano kakainin ko, basta pasok"],["Meal plan","Sabihin mo na lang kung ano kakainin ko"],["Hindi pa sure","Tulungan mo ako pumili"]]},
-  {k:"plan", t:"Anong plan yung tinitingnan mo?", h:"Okay lang kung hindi ka pa sure.", o:[
+  {k:"plan", t:"Anong plan yung balak mo?", h:"Okay lang kung hindi ka pa sure.", o:[
     ["1 month","₱3,500"],["3 months","₱9,000, pwedeng installment"],["6 months / 1 year","Pinaka-sulit per month"],["Posing","₱800 pataas"],["Hindi pa sure","Gusto ko muna magtanong"]]},
   {k:"info", form:true, t:"Sino ka?", h:"Huling tanong na."}
 ];
@@ -558,6 +558,20 @@ function done(el){
   });
 }
 render();
+
+/* ticker: fill twice the screen width so the loop never shows a gap */
+(function(){
+  const track = document.querySelector(".ticker .track"), grp = track.querySelector(".grp");
+  function build(){
+    track.querySelectorAll(".grp:not(:first-child)").forEach(n=>n.remove());
+    const w = grp.offsetWidth || 1, need = Math.ceil(innerWidth / w) + 1;
+    for (let k=1; k<need*2; k++) track.appendChild(grp.cloneNode(true));
+    const half = track.children.length / 2;
+    if (!Number.isInteger(half)) track.appendChild(grp.cloneNode(true));
+    track.style.setProperty("--dur", (w * track.children.length / 2 / 40) + "s");
+  }
+  build(); let t; addEventListener("resize", () => { clearTimeout(t); t = setTimeout(build, 200); });
+})();
 
 /* segmented control */
 const seg = $("#seg");
