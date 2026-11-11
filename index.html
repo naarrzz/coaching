@@ -12,7 +12,7 @@
 <meta property="og:description" content="Kumain ka. Basta pasok pa rin sa macros. Flexible prep para sa busy na tao.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,400..900&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --paper:#f2efe8; --paper-2:#e9e5db; --ink:#141414; --ink-2:#2a2a2a; --muted:#6b675f;
@@ -75,10 +75,11 @@ h2.display{font-size:clamp(34px,8vw,56px)}
 .creds{list-style:none;margin-top:28px;border-top:1px solid var(--line)}
 .creds li{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
 .creds b{font-family:var(--display);font-stretch:75%;font-weight:800;font-size:22px;line-height:1;min-width:64px}
-.rates-h{margin-bottom:8px}
-.rates-h em{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-weight:400;font-stretch:100%;letter-spacing:0;color:var(--accent);font-size:1.12em}
-.shot{margin:0 0 28px;height:min(72vh,560px);background:#141414}
-.shot img{width:100%;height:100%;object-fit:contain;object-position:50% 100%}
+.rates-h{margin-bottom:0}
+.rates-h em{font-style:italic;color:var(--accent)}
+.shot{margin:0;height:min(82vh,680px);background:#141414}
+.shot video{display:block;width:100%;height:100%;object-fit:contain;object-position:50% 100%}
+#rates .seg{margin-top:0}
 .frame .mono{position:absolute;inset:0;display:grid;place-items:center;color:#2b2b2b;font-family:var(--display);font-stretch:62%;font-weight:900;font-size:min(80vw,420px);line-height:.8;user-select:none}
 .frame figcaption{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;padding:12px 14px;color:#f2efe8;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-family:var(--display);font-weight:600;background:linear-gradient(transparent,rgba(0,0,0,.55))}
 
@@ -346,7 +347,7 @@ footer .big span{color:var(--accent)}
     <div class="container">
       <div class="sec-head label"><span>Rates</span><span>05</span></div>
       <h2 class="display rates-h">Mas mahaba, <em>mas sulit.</em></h2>
-      <figure class="shot"><img src="rates.jpg" alt="Narz, nagpo-posing" loading="lazy" width="900" height="1600"></figure>
+      <figure class="shot"><video src="rates.mp4" poster="rates.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Narz, nagfle-flex"></video></figure>
 
       <div class="seg-wrap"><div class="seg" role="tablist" data-i="0" id="seg">
         <span class="thumb"></span>
@@ -361,7 +362,7 @@ footer .big span{color:var(--accent)}
             <div class="terms">One-time payment</div><div class="save"><span class="day">≈ ₱117</span> / day</div>
           </div>
           <div class="plan feat">
-            <div class="tag">Dito nagsisimula karamihan</div>
+            <div class="tag">Recommended</div>
             <h3>3 Months</h3><div class="was"><s>₱10,500</s></div><div class="price">₱9,000</div>
             <div class="terms">₱4,500 × 2 &nbsp;|&nbsp; ₱2,000 down + ₱3,500 × 2</div><div class="save"><span class="day">₱100</span> / day · <b>save ₱1,500</b></div>
           </div>
