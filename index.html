@@ -8,7 +8,13 @@
 <meta name="description" content="Online coaching at posing coaching ni Narz Angelo Alcaide. Flexible dieting, natural bodybuilding, at plan na kasya sa totoong buhay mo.">
 <meta name="theme-color" content="#f2efe8">
 <meta property="og:title" content="Narz — Online Coaching at Posing">
-<meta property="og:image" content="https://naarrzz.github.io/coaching/hero.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://naarrzz.github.io/coaching/">
+<meta property="og:image" content="https://naarrzz.github.io/coaching/og.jpg?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Narz, natural bodybuilder, sa studio">
+<meta name="twitter:card" content="summary_large_image">
 <meta property="og:description" content="Kumain ka. Basta pasok pa rin sa macros. Flexible prep para sa busy na tao.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -501,6 +507,7 @@ const Q = [
     ["Matutong mag-pose","Posing coaching","Learn to pose","Posing coaching"]]},
   {k:"exp", t:"Gaano ka na katagal nagwo-workout?", te:"How long have you been working out?", o:[
     ["Hindi pa ako nagwo-workout","Start tayo from zero","I don't work out yet","We'll start from zero"],
+    ["Nag-workout dati pero tumigil","Babalik ulit","I used to work out but stopped","Getting back into it"],
     ["Kakasimula lang","Below 6 months","Just started","Below 6 months"],
     ["6 months to 2 years","","6 months to 2 years",""],
     ["2 years pataas","","2 years or more",""],
@@ -537,7 +544,7 @@ const UI = {
 const A = {}; let i = 0;
 const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const L = "ABCDE";
+const L = "ABCDEF";
 const ui = () => UI[LANG];
 const qt = (q, k) => LANG === "en" ? q[k + "e"] : q[k];
 const opt = (q, n) => LANG === "en" ? [q.o[n][2], q.o[n][3]] : [q.o[n][0], q.o[n][1]];
