@@ -8,6 +8,6 @@ Info page and application flow for my online coaching and posing coaching.
 - 6-question tap quiz that builds an application message, copies it, and opens an Instagram DM.
 - Mobile-first, with a sticky apply bar on phones.
 
-Add a photo as `hero.jpg` to replace the monogram.
+Photos: `hero.jpg` (hero) and `gym.jpg` (rates section).
 
 By Narz Angelo Alcaide.
