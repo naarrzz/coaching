@@ -118,8 +118,12 @@ section{padding-top:84px;padding-bottom:84px}
 .seg .thumb{position:absolute;top:4px;bottom:4px;left:4px;width:calc(50% - 4px);background:var(--paper);border-radius:999px;transition:transform .35s var(--ease)}
 .seg[data-i="1"] .thumb{transform:translateX(100%)}
 .plans{border-top:1px solid #333}
-.plan{display:grid;grid-template-columns:1fr auto;grid-template-areas:"tag tag" "name price" "name save" "terms terms";gap:2px 16px;padding:22px 0;border-bottom:1px solid #333;position:relative}
-.plan h3{grid-area:name}.plan .price{grid-area:price}.plan .save{grid-area:save}.plan .terms{grid-area:terms;margin-top:8px}.plan .tag{grid-area:tag}
+.plan{display:grid;grid-template-columns:1fr auto;grid-template-areas:"tag tag" "name was" "name price" "name save" "terms terms";gap:2px 16px;padding:22px 0;border-bottom:1px solid #333;position:relative}
+.plan .was{grid-area:was;text-align:right;color:#8a857b;font-size:15px;text-decoration:line-through;text-decoration-thickness:1.5px;font-variant-numeric:tabular-nums}
+.plan .day{color:var(--accent);font-weight:700;font-size:16px}
+.day-note{margin-top:22px;font-family:var(--display);font-stretch:80%;font-weight:750;font-size:22px;line-height:1.1}
+.day-note span{color:var(--accent)}
+.plan h3{grid-area:name;align-self:center}.plan .price{grid-area:price}.plan .save{grid-area:save}.plan .terms{grid-area:terms;margin-top:8px}.plan .tag{grid-area:tag}
 .plan h3{font-family:var(--display);font-stretch:85%;font-weight:750;font-size:24px;line-height:1.1}
 .plan .price{font-family:var(--display);font-stretch:75%;font-weight:800;font-size:34px;line-height:1;text-align:right;font-variant-numeric:tabular-nums}
 .plan .terms{color:#9c978d;font-size:14.5px}
@@ -229,7 +233,7 @@ footer .big span{color:var(--accent)}
         <!-- Lagay ang photo bilang hero.jpg sa folder na ito -->
         <img src="hero.jpg" alt="Narz, natural bodybuilder" width="1050" height="1400" fetchpriority="high">
         <div class="mono" aria-hidden="true">N</div>
-        <figcaption><span>Natural bodybuilder</span><span>Imus, Cavite</span></figcaption>
+        <figcaption><span>Natural champion</span><span>Classic Physique · Bodybuilding</span></figcaption>
       </figure>
       <div class="reveal">
         <p class="lede">Ako si Narz, natural bodybuilder. <b>Buong prep, flexible ang diet ko</b>, habang sabay ang school, trabaho at content. Ganito rin ang paraan na ituturo ko sa'yo.</p>
@@ -238,8 +242,7 @@ footer .big span{color:var(--accent)}
           <a class="link" href="#rates">Tingnan ang rates</a>
         </div>
         <ul class="creds">
-          <li><b>2× 1st</b><span>NBA Universe, natural federation</span></li>
-          <li><b>Top 5</b><span>Batang Hipe Classic 2025, Men's Physique Juniors</span></li>
+          <li><b>Champion</b><span>Natural Classic Physique and Bodybuilding</span></li>
           <li><b>IIFYM</b><span>Flexible dieting buong prep, walang "cheat day"</span></li>
         </ul>
       </div>
@@ -301,22 +304,24 @@ footer .big span{color:var(--accent)}
         <div class="plans">
           <div class="plan">
             <h3>1 Month</h3><div class="price">₱3,500</div>
-            <div class="terms">Isang bayad</div><div class="save">₱3,500 / buwan</div>
+            <div class="terms">Isang bayad</div><div class="save"><span class="day">≈ ₱117</span> / araw</div>
           </div>
           <div class="plan feat">
             <div class="tag">Dito nagsisimula ang karamihan</div>
-            <h3>3 Months</h3><div class="price">₱9,000</div>
-            <div class="terms">₱4,500 × 2, o ₱2,000 down + ₱3,500 × 2</div><div class="save">₱3,000 / buwan · <b>tipid ₱1,500</b></div>
+            <h3>3 Months</h3><div class="was">₱10,500</div><div class="price">₱9,000</div>
+            <div class="terms">₱4,500 × 2, o ₱2,000 down + ₱3,500 × 2</div><div class="save"><span class="day">₱100</span> / araw · <b>tipid ₱1,500</b></div>
           </div>
           <div class="plan">
-            <h3>6 Months</h3><div class="price">₱16,500</div>
-            <div class="terms">₱8,250 × 2, o ₱5,500 × 3</div><div class="save">₱2,750 / buwan · <b>tipid ₱4,500</b></div>
+            <h3>6 Months</h3><div class="was">₱21,000</div><div class="price">₱16,500</div>
+            <div class="terms">₱8,250 × 2, o ₱5,500 × 3</div><div class="save"><span class="day">≈ ₱92</span> / araw · <b>tipid ₱4,500</b></div>
           </div>
           <div class="plan">
-            <h3>1 Year</h3><div class="price">₱30,000</div>
-            <div class="terms">₱7,500 kada quarter</div><div class="save">₱2,500 / buwan · <b>tipid ₱12,000</b></div>
+            <h3>1 Year</h3><div class="was">₱42,000</div><div class="price">₱30,000</div>
+            <div class="terms">₱7,500 kada quarter</div><div class="save"><span class="day">≈ ₱82</span> / araw · <b>tipid ₱12,000</b></div>
           </div>
         </div>
+        <p class="day-note">Sa 3 months, <span>₱100 kada araw</span>. Mas mura pa sa isang iced coffee.</p>
+        <p class="muted" style="font-size:13px;margin-top:8px">Ang naka-ekis na presyo ay kung buwanan ka magbabayad (₱3,500 × bilang ng buwan).</p>
         <ul class="incl">
           <!-- TODO Narz: i-confirm ang listahan -->
           <li>Custom macros base sa katawan, goal at schedule mo</li>
@@ -390,7 +395,7 @@ footer .big span{color:var(--accent)}
 </footer>
 
 <div class="dock" id="dock">
-  <p><b>Online coaching</b>mula ₱2,500 / buwan</p>
+  <p><b>Online coaching</b>mula ₱82 / araw</p>
   <a class="btn" href="#apply">Mag-apply</a>
 </div>
 
