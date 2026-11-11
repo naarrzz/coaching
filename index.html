@@ -1,307 +1,486 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fil">
 <head>
 <meta charset="utf-8">
+<script>document.documentElement.classList.add("js")</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Narz Coaching · Flexible prep, natural results</title>
-<meta name="description" content="Online coaching at posing coaching ni Narz Angelo Alcaide. Flexible dieting (IIFYM), natural bodybuilding, at plano na kasya sa busy na buhay.">
-<meta name="theme-color" content="#0e0e10">
+<title>Narz — Online Coaching at Posing</title>
+<meta name="description" content="Online coaching at posing coaching ni Narz Angelo Alcaide. Flexible dieting, natural bodybuilding, at planong kasya sa totoong buhay.">
+<meta name="theme-color" content="#f2efe8">
+<meta property="og:title" content="Narz — Online Coaching at Posing">
+<meta property="og:description" content="Kumain ka. Pasok pa rin sa macros. Flexible prep para sa busy na tao.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#0e0e10; --card:#18181b; --card2:#202024; --line:#2c2c31;
-    --text:#f4f4f5; --muted:#a1a1aa; --accent:#e8b04b; --accent-ink:#1a1306;
-    --radius:20px;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
-  body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:560px;margin:0 auto;padding:0 20px}
-  section{padding-top:48px;padding-bottom:48px}
-  h1,h2,h3{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Inter,sans-serif;letter-spacing:-.02em;line-height:1.05}
-  h2{font-size:30px;font-weight:850;text-transform:uppercase;margin-bottom:8px}
-  .eyebrow{color:var(--accent);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
-  .sub{color:var(--muted);margin-bottom:24px}
-  a{color:inherit}
+:root{
+  --paper:#f2efe8; --paper-2:#e9e5db; --ink:#141414; --ink-2:#2a2a2a; --muted:#6b675f;
+  --line:#d6d0c3; --accent:#d93d1a; --accent-soft:#f6dcd2;
+  --display:"Archivo", "Arial Narrow", sans-serif;
+  --body:"Instrument Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --pad:20px; --max:1080px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.55 var(--body);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit}
+::selection{background:var(--ink);color:var(--paper)}
+.container{max-width:var(--max);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+@media (min-width:720px){:root{--pad:40px}}
 
-  /* hero */
-  .hero{padding-top:28px;padding-bottom:40px}
-  .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px;font-size:14px;color:var(--muted)}
-  .top b{color:var(--text)}
-  .photo{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:4/5;background:linear-gradient(160deg,#2a2418,#121214 70%);margin-bottom:24px;display:grid;place-items:center}
-  .photo img{width:100%;height:100%;object-fit:cover;display:block}
-  .photo .ph{color:#5c5240;font-weight:900;font-size:96px;letter-spacing:-.04em}
-  .photo .tag{position:absolute;left:14px;bottom:14px;background:rgba(14,14,16,.72);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:8px 12px;border-radius:999px;font-size:13px;font-weight:600}
-  .hero h1{font-size:44px;font-weight:900;text-transform:uppercase;margin-bottom:14px}
-  .hero h1 em{font-style:normal;color:var(--accent)}
-  .hero p{color:var(--muted);font-size:17px;margin-bottom:24px}
-  .btn{display:block;width:100%;text-align:center;border:0;border-radius:999px;padding:16px 20px;font-size:17px;font-weight:700;cursor:pointer;text-decoration:none;font-family:inherit}
-  .btn.primary{background:var(--accent);color:var(--accent-ink)}
-  .btn.ghost{background:var(--card2);color:var(--text);margin-top:10px}
-  .btn:active{transform:scale(.98)}
+/* type */
+.display{font-family:var(--display);font-stretch:68%;font-weight:850;text-transform:uppercase;line-height:.88;letter-spacing:-.01em}
+.label{font-family:var(--display);font-stretch:100%;font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.muted{color:var(--muted)}
+h2.display{font-size:clamp(44px,11vw,88px)}
 
-  /* cards */
-  .grid{display:grid;gap:12px}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
-  .card h3{font-size:19px;font-weight:750;margin-bottom:6px}
-  .card p{color:var(--muted);font-size:15px}
-  .card .ico{font-size:26px;margin-bottom:10px}
+/* header */
+.bar{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid transparent;transition:border-color .2s}
+.bar.scrolled{border-bottom-color:var(--line)}
+.bar .container{display:flex;align-items:center;justify-content:space-between;height:56px}
+.mark{font-family:var(--display);font-stretch:62%;font-weight:900;font-size:26px;letter-spacing:.01em;text-decoration:none;line-height:1}
+.mark span{color:var(--accent)}
+.bar nav{display:flex;gap:22px;align-items:center}
+.bar nav a{font-size:14px;font-weight:500;text-decoration:none}
+.bar nav a.hide-sm{display:none}
+@media (min-width:720px){.bar nav a.hide-sm{display:inline}}
+.pill{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--paper);padding:9px 16px;border-radius:999px;font-size:14px;font-weight:600;text-decoration:none}
 
-  /* plans */
-  .plan{position:relative}
-  .plan .row{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
-  .plan .price{font-size:26px;font-weight:850;letter-spacing:-.02em;white-space:nowrap}
-  .plan .per{color:var(--muted);font-size:14px}
-  .plan .note{margin-top:6px;color:var(--muted);font-size:14px}
-  .plan.best{border-color:var(--accent);background:linear-gradient(180deg,#221c10,var(--card) 60%)}
-  .badge{display:inline-block;background:var(--accent);color:var(--accent-ink);font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 9px;border-radius:999px;margin-bottom:10px}
-  ul.inc{list-style:none;display:grid;gap:10px;margin-top:4px}
-  ul.inc li{display:flex;gap:10px;color:var(--text);font-size:15px}
-  ul.inc li::before{content:"✓";color:var(--accent);font-weight:900}
+/* hero */
+.hero{padding-top:28px;padding-bottom:56px}
+.hero .kicker{display:flex;justify-content:space-between;border-top:1.5px solid var(--ink);padding-top:10px;margin-bottom:22px}
+.hero h1{font-size:clamp(56px,16.2vw,168px)}
+.hero h1 .a{color:var(--accent)}
+.hero-grid{display:grid;gap:28px;margin-top:28px}
+@media (min-width:860px){.hero-grid{grid-template-columns:1.1fr .9fr;align-items:end}}
+.hero .lede{font-size:19px;line-height:1.45;max-width:30ch}
+.hero .lede b{font-weight:600}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px 22px;align-items:center;margin-top:26px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--accent);color:#fff;border:0;border-radius:999px;padding:17px 26px;font-weight:600;font-size:16px;text-decoration:none;cursor:pointer;transition:transform .15s var(--ease),background .2s}
+.btn:hover{background:#c23413}
+.btn:active{transform:scale(.97)}
+.btn .arr{transition:transform .2s var(--ease)}
+.btn:hover .arr{transform:translateX(3px)}
+.link{font-weight:600;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1.5px}
 
-  /* quiz */
-  .quiz{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:22px}
-  .bar{height:6px;background:var(--card2);border-radius:99px;overflow:hidden;margin-bottom:20px}
-  .bar i{display:block;height:100%;width:0;background:var(--accent);border-radius:99px;transition:width .3s ease}
-  .q h3{font-size:22px;font-weight:800;margin-bottom:6px}
-  .q .hint{color:var(--muted);font-size:14px;margin-bottom:16px}
-  .opts{display:grid;gap:10px}
-  .opt{background:var(--card2);border:1.5px solid transparent;color:var(--text);border-radius:16px;padding:15px 16px;font-size:16px;font-weight:600;text-align:left;cursor:pointer;font-family:inherit;display:flex;gap:12px;align-items:center}
-  .opt span.e{font-size:22px}
-  .opt small{display:block;color:var(--muted);font-weight:500;font-size:13px}
-  .opt.on{border-color:var(--accent);background:#2a2314}
-  .field{display:block;margin-bottom:12px}
-  .field span{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
-  .field input,.field textarea{width:100%;background:var(--card2);border:1.5px solid var(--line);border-radius:14px;color:var(--text);padding:14px;font-size:16px;font-family:inherit}
-  .field input:focus,.field textarea:focus{outline:none;border-color:var(--accent)}
-  .field textarea{min-height:88px;resize:vertical}
-  .nav{display:flex;gap:10px;margin-top:18px}
-  .nav .btn{margin:0}
-  .nav .back{flex:0 0 auto;width:auto;padding:16px 20px;background:var(--card2);color:var(--text)}
-  .summary{background:var(--card2);border-radius:16px;padding:16px;font-size:14px;white-space:pre-wrap;color:var(--text);margin:14px 0;max-height:260px;overflow:auto}
-  .small{color:var(--muted);font-size:13px;text-align:center;margin-top:10px}
+.frame{position:relative;aspect-ratio:4/5;background:var(--ink);overflow:hidden}
+.frame img{width:100%;height:100%;object-fit:cover}
+.frame .mono{position:absolute;inset:0;display:grid;place-items:center;color:#2b2b2b;font-family:var(--display);font-stretch:62%;font-weight:900;font-size:min(80vw,420px);line-height:.8;user-select:none}
+.frame figcaption{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;padding:12px 14px;color:#f2efe8;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-family:var(--display);font-weight:600;background:linear-gradient(transparent,rgba(0,0,0,.55))}
 
-  details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
-  details+details{margin-top:10px}
-  summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:12px}
-  summary::-webkit-details-marker{display:none}
-  summary::after{content:"+";color:var(--accent);font-weight:900}
-  details[open] summary::after{content:"–"}
-  details p{color:var(--muted);margin-top:10px;font-size:15px}
+/* ticker */
+.ticker{border-top:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);overflow:hidden;white-space:nowrap;background:var(--paper)}
+.ticker div{display:inline-flex;gap:28px;padding:12px 0;animation:tick 32s linear infinite}
+.ticker span{font-family:var(--display);font-stretch:68%;font-weight:800;font-size:22px;text-transform:uppercase}
+.ticker i{color:var(--accent);font-style:normal}
+@keyframes tick{to{transform:translateX(-50%)}}
 
-  footer{padding-top:40px;padding-bottom:60px;color:var(--muted);font-size:13px;text-align:center}
-  footer a{color:var(--text)}
-  .toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(120px);background:#f4f4f5;color:#111;padding:12px 18px;border-radius:999px;font-weight:600;font-size:14px;transition:transform .3s ease;z-index:9}
-  .toast.show{transform:translateX(-50%) translateY(0)}
+/* sections */
+section{padding-top:84px;padding-bottom:84px}
+.sec-head{display:flex;justify-content:space-between;align-items:baseline;border-top:1.5px solid var(--ink);padding-top:10px;margin-bottom:28px}
+
+/* principles */
+.rows{border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:44px 1fr;gap:6px 14px;padding:22px 0;border-bottom:1px solid var(--line)}
+.row .n{font-family:var(--display);font-weight:700;font-size:14px;color:var(--accent);padding-top:4px}
+.row h3{font-family:var(--display);font-stretch:85%;font-weight:750;font-size:26px;line-height:1.05;letter-spacing:-.01em}
+.row p{grid-column:2;color:var(--ink-2);max-width:52ch}
+@media (min-width:860px){.row{grid-template-columns:80px 1fr 1.2fr;align-items:baseline}.row p{grid-column:3}}
+
+/* fit */
+.fit{display:grid;gap:14px}
+@media (min-width:720px){.fit{grid-template-columns:1fr 1fr}}
+.fit .col{padding:24px;border:1.5px solid var(--ink)}
+.fit .col.no{border-color:var(--line);color:var(--ink-2)}
+.fit h3{font-family:var(--display);font-stretch:85%;font-weight:750;font-size:22px;margin-bottom:14px}
+.fit ul{list-style:none;display:grid;gap:12px}
+.fit li{display:grid;grid-template-columns:20px 1fr;gap:10px;font-size:15.5px}
+.fit li::before{content:"";width:10px;height:10px;margin-top:7px;background:var(--accent)}
+.fit .no li::before{background:transparent;border:1.5px solid var(--muted);width:7px;height:7px}
+
+/* pricing */
+.dark{background:var(--ink);color:var(--paper)}
+.dark .sec-head{border-top-color:var(--paper)}
+.dark .muted{color:#9c978d}
+.seg{display:inline-grid;grid-template-columns:1fr 1fr;background:#262626;border-radius:999px;padding:4px;position:relative;margin-bottom:28px}
+.seg button{position:relative;z-index:1;background:none;border:0;padding:10px 20px;font-weight:600;font-size:15px;color:#bdb8ad;cursor:pointer;border-radius:999px;transition:color .2s}
+.seg button[aria-selected="true"]{color:var(--ink)}
+.seg .thumb{position:absolute;top:4px;bottom:4px;left:4px;width:calc(50% - 4px);background:var(--paper);border-radius:999px;transition:transform .35s var(--ease)}
+.seg[data-i="1"] .thumb{transform:translateX(100%)}
+.plans{border-top:1px solid #333}
+.plan{display:grid;grid-template-columns:1fr auto;grid-template-areas:"tag tag" "name price" "name save" "terms terms";gap:2px 16px;padding:22px 0;border-bottom:1px solid #333;position:relative}
+.plan h3{grid-area:name}.plan .price{grid-area:price}.plan .save{grid-area:save}.plan .terms{grid-area:terms;margin-top:8px}.plan .tag{grid-area:tag}
+.plan h3{font-family:var(--display);font-stretch:85%;font-weight:750;font-size:24px;line-height:1.1}
+.plan .price{font-family:var(--display);font-stretch:75%;font-weight:800;font-size:34px;line-height:1;text-align:right;font-variant-numeric:tabular-nums}
+.plan .terms{color:#9c978d;font-size:14.5px}
+.plan .save{text-align:right;font-size:14px;color:#9c978d;font-variant-numeric:tabular-nums}
+.plan .save b{color:var(--paper);font-weight:600}
+.plan.feat{padding-left:16px;margin-left:-16px;padding-right:16px;margin-right:-16px;background:#1f1f1f}
+.plan.feat::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent)}
+.plan .tag{font-family:var(--display);font-weight:600;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+.panel[hidden]{display:none}
+.incl{margin-top:36px;display:grid;gap:10px 28px}
+@media (min-width:720px){.incl{grid-template-columns:1fr 1fr}}
+.incl li{list-style:none;display:grid;grid-template-columns:22px 1fr;gap:8px;font-size:15.5px;color:#e6e2d9}
+.incl li::before{content:"—";color:var(--accent);font-weight:700}
+.pay-note{margin-top:28px;font-size:14px}
+
+/* steps */
+.steps{display:grid;gap:0;counter-reset:s}
+@media (min-width:860px){.steps{grid-template-columns:repeat(3,1fr);gap:28px}}
+.step{padding:22px 0;border-top:1px solid var(--line)}
+.step .label{color:var(--accent);margin-bottom:10px;display:block}
+.step h3{font-family:var(--display);font-stretch:85%;font-weight:750;font-size:24px;margin-bottom:6px}
+.step p{color:var(--ink-2)}
+
+/* quiz */
+.apply{background:var(--paper-2)}
+.quiz{background:var(--paper);border:1.5px solid var(--ink);padding:22px;max-width:620px}
+@media (min-width:720px){.quiz{padding:34px}}
+.q-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.q-count{font-family:var(--display);font-weight:700;font-size:14px;font-variant-numeric:tabular-nums}
+.q-back{background:none;border:0;font-size:14px;font-weight:600;cursor:pointer;color:var(--muted);padding:6px 0}
+.q-back:disabled{visibility:hidden}
+.prog{height:3px;background:var(--line);margin-bottom:26px}
+.prog i{display:block;height:100%;background:var(--accent);width:0;transition:width .4s var(--ease)}
+.q-title{font-family:var(--display);font-stretch:80%;font-weight:800;font-size:clamp(30px,7vw,40px);line-height:1;text-transform:uppercase;margin-bottom:8px}
+.q-hint{color:var(--muted);font-size:14.5px;margin-bottom:20px}
+.opts{display:grid;gap:8px}
+.opt{display:grid;grid-template-columns:30px 1fr;align-items:center;gap:12px;text-align:left;background:transparent;border:1.5px solid var(--line);padding:14px 14px;cursor:pointer;transition:border-color .15s,background .15s,transform .12s var(--ease)}
+.opt:hover{border-color:var(--ink)}
+.opt:active{transform:scale(.99)}
+.opt .k{width:28px;height:28px;display:grid;place-items:center;border:1.5px solid var(--ink);font-family:var(--display);font-weight:700;font-size:13px}
+.opt b{font-weight:600;font-size:16px;display:block}
+.opt small{color:var(--muted);font-size:13.5px}
+.opt.on{border-color:var(--ink);background:var(--ink);color:var(--paper)}
+.opt.on .k{background:var(--accent);border-color:var(--accent);color:#fff}
+.opt.on small{color:#bdb8ad}
+.fld{display:block;margin-bottom:14px}
+.fld span{display:block;font-size:13px;font-weight:600;margin-bottom:6px}
+.fld input,.fld textarea{width:100%;background:transparent;border:0;border-bottom:1.5px solid var(--ink);padding:10px 0;font:inherit;font-size:17px;border-radius:0}
+.fld input:focus,.fld textarea:focus{outline:none;border-bottom-color:var(--accent)}
+.fld textarea{min-height:72px;resize:vertical}
+.msg{background:var(--paper-2);border-left:3px solid var(--accent);padding:16px;font-size:14.5px;white-space:pre-wrap;margin:18px 0}
+.full{width:100%}
+.q-fine{color:var(--muted);font-size:13px;margin-top:12px}
+.fade{animation:fade .35s var(--ease)}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* faq */
+.faq{border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;padding:20px 0;font-weight:600;font-size:17px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";width:12px;height:12px;flex:0 0 12px;margin-top:6px;background:linear-gradient(var(--ink),var(--ink)) center/100% 1.5px no-repeat,linear-gradient(var(--ink),var(--ink)) center/1.5px 100% no-repeat;transition:transform .25s var(--ease)}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq p{padding:0 0 20px;color:var(--ink-2);max-width:60ch}
+
+/* footer */
+footer{background:var(--ink);color:var(--paper);padding-top:56px;padding-bottom:calc(40px + env(safe-area-inset-bottom))}
+footer .big{font-family:var(--display);font-stretch:62%;font-weight:900;font-size:clamp(120px,40vw,360px);line-height:.78;letter-spacing:-.01em;text-transform:uppercase}
+footer .big span{color:var(--accent)}
+.foot-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:28px;padding-top:16px;border-top:1px solid #333;font-size:14px;color:#9c978d}
+.foot-row a{color:var(--paper);text-decoration:none;margin-right:18px}
+
+/* sticky mobile cta */
+.dock{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:30;display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--ink);color:var(--paper);padding:10px 10px 10px 18px;border-radius:999px;transform:translateY(140%);transition:transform .35s var(--ease);box-shadow:0 10px 30px rgba(0,0,0,.18);border:1px solid #3a3a3a}
+.dock.show{transform:none}
+.dock p{font-size:14px;line-height:1.2}
+.dock p b{display:block;font-weight:600}
+.dock .btn{padding:12px 18px;font-size:15px}
+@media (min-width:860px){.dock{display:none}}
+
+.js .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.js .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 </style>
 </head>
 <body>
 
-<header class="wrap hero">
-  <div class="top"><b>@naarrzz</b><span>Online · Imus, Cavite</span></div>
-  <div class="photo">
-    <!-- Lagay ang photo mo bilang hero.jpg sa folder na ito -->
-    <img src="hero.jpg" alt="Narz on stage" onerror="this.remove()">
-    <div class="ph">NA</div>
-    <div class="tag">Natural bodybuilder · Classic Physique</div>
+<header class="bar" id="bar">
+  <div class="container">
+    <a class="mark" href="#top">Narz<span>.</span></a>
+    <nav>
+      <a class="hide-sm" href="#paano">Approach</a>
+      <a class="hide-sm" href="#rates">Rates</a>
+      <a class="pill" href="#apply">Mag-apply</a>
+    </nav>
   </div>
-  <div class="eyebrow">Online coaching · Posing coaching</div>
-  <h1>Flexible prep. <em>Real</em> results.</h1>
-  <p>Hindi mo kailangang isuko ang pagkaing gusto mo para gumanda ang katawan mo. Buong prep ko, flexible ako. Pasok sa macros, pasok sa buhay.</p>
-  <a class="btn primary" href="#apply">Apply for coaching</a>
-  <a class="btn ghost" href="#posing">Posing coaching</a>
 </header>
 
-<section class="wrap">
-  <div class="eyebrow">Paano ako mag-coach</div>
-  <h2>Hindi ito diet na bawal lahat</h2>
-  <p class="sub">Ang plano mo ay dapat kasya sa totoong buhay mo: school, trabaho, lakad, at Jollibee paminsan-minsan.</p>
-  <div class="grid">
-    <div class="card"><div class="ico">🍔</div><h3>Flexible dieting (IIFYM)</h3><p>Macros at micronutrients ang target, hindi listahan ng bawal. Kaya mong sundin kahit kumakain sa labas.</p></div>
-    <div class="card"><div class="ico">🧠</div><h3>Desisyon base sa data</h3><p>Weekly check-ins: timbang, photos, lakas, tulog. Hindi tayo nagbabago ng plano dahil lang sa isang tingin sa salamin.</p></div>
-    <div class="card"><div class="ico">⏱️</div><h3>Para sa busy</h3><p>Sabay kong ginawa ang school, internship, content at prep. Alam ko kung paano pagkasyahin ang training sa masikip na schedule.</p></div>
-    <div class="card"><div class="ico">🌿</div><h3>Natural</h3><p>Natural competitor ako at natural ang approach ko. Walang shortcut, malinaw na proseso lang.</p></div>
-  </div>
-</section>
+<main id="top">
+  <div class="container hero">
+    <div class="kicker label"><span>Online coaching</span><span>Natural bodybuilding</span></div>
+    <h1 class="display">Kumain ka.<br>Pasok pa rin<br><span class="a">sa macros.</span></h1>
 
-<section class="wrap" id="plans">
-  <div class="eyebrow">Online coaching</div>
-  <h2>Plans</h2>
-  <p class="sub">Lahat ng plans ay may parehong coaching. Mas mahaba ang plan, mas mababa ang bayad kada buwan.</p>
-  <div class="grid">
-    <div class="card plan">
-      <div class="row"><h3>1 Month</h3><div class="price">₱3,500</div></div>
-      <div class="note">Para subukan muna.</div>
-    </div>
-    <div class="card plan best">
-      <span class="badge">Pinaka-pinipili</span>
-      <div class="row"><h3>3 Months</h3><div><span class="price">₱9,000</span></div></div>
-      <div class="per">₱3,000 / month</div>
-      <div class="note">Pwedeng hulugan: ₱4,500 × 2, o ₱2,000 down + ₱3,500 × 2.</div>
-    </div>
-    <div class="card plan">
-      <div class="row"><h3>6 Months</h3><div class="price">₱16,500</div></div>
-      <div class="per">₱2,750 / month</div>
-      <div class="note">Pwedeng hulugan: ₱8,250 × 2, o ₱5,500 × 3.</div>
-    </div>
-    <div class="card plan">
-      <div class="row"><h3>1 Year</h3><div class="price">₱30,000</div></div>
-      <div class="per">₱2,500 / month</div>
-      <div class="note">Pwedeng hulugan: ₱7,500 kada quarter.</div>
+    <div class="hero-grid">
+      <figure class="frame reveal">
+        <!-- Lagay ang photo bilang hero.jpg sa folder na ito -->
+        <img src="hero.jpg" alt="Narz sa stage" onerror="this.remove()">
+        <div class="mono" aria-hidden="true">N</div>
+        <figcaption><span>Classic Physique</span><span>Juniors · Natural</span></figcaption>
+      </figure>
+      <div class="reveal">
+        <p class="lede">Ako si Narz, natural bodybuilder. <b>Buong prep, flexible ang diet ko</b>, habang sabay ang school, trabaho at content. Ganito rin ang paraan na ituturo ko sa'yo.</p>
+        <div class="cta-row">
+          <a class="btn" href="#apply">Mag-apply <span class="arr">→</span></a>
+          <a class="link" href="#rates">Tingnan ang rates</a>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="card" style="margin-top:14px">
-    <h3 style="margin-bottom:12px">Kasama sa coaching</h3>
-    <!-- TODO Narz: i-check kung tama ang listahan na ito -->
-    <ul class="inc">
-      <li>Custom macros base sa goal, katawan at schedule mo</li>
-      <li>Training program na naka-ayon sa ilang araw ang kaya mo</li>
-      <li>Weekly check-in at adjustments</li>
-      <li>Chat support para sa mga tanong mo</li>
-      <li>Form check sa videos mo</li>
-    </ul>
-  </div>
-</section>
+  <div class="ticker" aria-hidden="true"><div>
+    <span>Flexible dieting</span><i>/</i><span>Weekly check-ins</span><i>/</i><span>Natural</span><i>/</i><span>Posing</span><i>/</i><span>Para sa busy</span><i>/</i>
+    <span>Flexible dieting</span><i>/</i><span>Weekly check-ins</span><i>/</i><span>Natural</span><i>/</i><span>Posing</span><i>/</i><span>Para sa busy</span><i>/</i>
+  </div></div>
 
-<section class="wrap" id="posing">
-  <div class="eyebrow">Posing coaching</div>
-  <h2>Ang posing nabubuo months before the show</h2>
-  <p class="sub">Para sa competitors at sa gustong matutong mag-pose. 1-on-1, online o in person.</p>
-  <div class="grid">
-    <div class="card plan">
-      <div class="row"><h3>1 Session</h3><div class="price">₱800</div></div>
-      <div class="note">45–60 mins.</div>
+  <section id="paano" class="container">
+    <div class="sec-head label"><span>Paano ako mag-coach</span><span>01</span></div>
+    <h2 class="display reveal" style="margin-bottom:36px">Walang bawal.<br>May sistema.</h2>
+    <div class="rows">
+      <div class="row reveal"><span class="n">01</span><h3>Macros, hindi listahan ng bawal</h3><p>May target ka sa protein, carbs at fats. Kung saan mo kukunin, ikaw ang bahala. Kaya mo itong sundin kahit kumakain sa labas, kasama ang barkada o pamilya.</p></div>
+      <div class="row reveal"><span class="n">02</span><h3>Data ang basehan, hindi salamin</h3><p>Weekly check-in: timbang, photos, lakas sa gym, tulog. Doon tayo nagdedesisyon. Hindi natin binabago ang plano dahil sa isang masamang araw.</p></div>
+      <div class="row reveal"><span class="n">03</span><h3>Kasya sa schedule mo</h3><p>3 days man o 6 days ang kaya mo, doon natin ibabase ang program. Galing ako sa school, trabaho at prep nang sabay, kaya alam ko ang masikip na oras.</p></div>
+      <div class="row reveal"><span class="n">04</span><h3>Natural, at matagalan</h3><p>Ang goal ay progress na kaya mong ituloy, hindi isang crash diet na ilang linggo lang tatagal.</p></div>
     </div>
-    <div class="card plan">
-      <div class="row"><h3>4 Sessions</h3><div class="price">₱2,800</div></div>
-      <div class="per">₱700 / session</div>
+  </section>
+
+  <section class="container" style="padding-top:0">
+    <div class="sec-head label"><span>Bagay ba tayo?</span><span>02</span></div>
+    <div class="fit">
+      <div class="col reveal">
+        <h3>Para sa'yo ito kung…</h3>
+        <ul>
+          <li>Gusto mong mag-cut o mag-bulk nang hindi sinusuko ang pagkaing gusto mo</li>
+          <li>Busy ka sa school o trabaho pero seryoso ka sa progress</li>
+          <li>Gusto mong matuto, hindi lang sumunod sa plano</li>
+          <li>Plano mong mag-compete, o gusto mo lang magmukhang nag-compete</li>
+        </ul>
+      </div>
+      <div class="col no reveal">
+        <h3>Hindi muna kung…</h3>
+        <ul>
+          <li>Naghahanap ka ng mabilisang resulta sa loob ng 2 linggo</li>
+          <li>Ayaw mong mag-check in o mag-track ng kahit ano</li>
+          <li>Naghahanap ka ng enhanced protocol</li>
+        </ul>
+      </div>
     </div>
-    <div class="card plan best">
-      <span class="badge">Pang-show</span>
-      <div class="row"><h3>Show Package</h3><div class="price">₱4,500</div></div>
-      <div class="note">4 sessions + unlimited video posing review + posing routine.</div>
+  </section>
+
+  <section id="rates" class="dark">
+    <div class="container">
+      <div class="sec-head label"><span>Rates</span><span>03</span></div>
+      <h2 class="display" style="margin-bottom:28px">Mas mahaba,<br>mas tipid.</h2>
+
+      <div class="seg" role="tablist" data-i="0" id="seg">
+        <span class="thumb"></span>
+        <button role="tab" aria-selected="true" data-p="0">Online coaching</button>
+        <button role="tab" aria-selected="false" data-p="1">Posing</button>
+      </div>
+
+      <div class="panel" id="p0">
+        <div class="plans">
+          <div class="plan">
+            <h3>1 Month</h3><div class="price">₱3,500</div>
+            <div class="terms">Isang bayad</div><div class="save">₱3,500 / buwan</div>
+          </div>
+          <div class="plan feat">
+            <div class="tag">Dito nagsisimula ang karamihan</div>
+            <h3>3 Months</h3><div class="price">₱9,000</div>
+            <div class="terms">₱4,500 × 2, o ₱2,000 down + ₱3,500 × 2</div><div class="save">₱3,000 / buwan · <b>tipid ₱1,500</b></div>
+          </div>
+          <div class="plan">
+            <h3>6 Months</h3><div class="price">₱16,500</div>
+            <div class="terms">₱8,250 × 2, o ₱5,500 × 3</div><div class="save">₱2,750 / buwan · <b>tipid ₱4,500</b></div>
+          </div>
+          <div class="plan">
+            <h3>1 Year</h3><div class="price">₱30,000</div>
+            <div class="terms">₱7,500 kada quarter</div><div class="save">₱2,500 / buwan · <b>tipid ₱12,000</b></div>
+          </div>
+        </div>
+        <ul class="incl">
+          <!-- TODO Narz: i-confirm ang listahan -->
+          <li>Custom macros base sa katawan, goal at schedule mo</li>
+          <li>Training program na naka-ayon sa ilang araw ang kaya mo</li>
+          <li>Weekly check-in at adjustments</li>
+          <li>Chat support para sa mga tanong</li>
+          <li>Form check sa videos mo</li>
+          <li>Gabay sa pagkain sa labas at sa mga okasyon</li>
+        </ul>
+      </div>
+
+      <div class="panel" id="p1" hidden>
+        <div class="plans">
+          <div class="plan">
+            <h3>1 Session</h3><div class="price">₱800</div>
+            <div class="terms">45–60 mins, online o in person</div><div class="save">₱800 / session</div>
+          </div>
+          <div class="plan">
+            <h3>4 Sessions</h3><div class="price">₱2,800</div>
+            <div class="terms">Gamitin kahit kailan bago ang show</div><div class="save">₱700 / session · <b>tipid ₱400</b></div>
+          </div>
+          <div class="plan feat">
+            <div class="tag">Pang-show</div>
+            <h3>Show Package</h3><div class="price">₱4,500</div>
+            <div class="terms">4 sessions + unlimited video posing review + posing routine</div><div class="save">Para sa may target na show</div>
+          </div>
+        </div>
+      </div>
+
+      <p class="pay-note muted">Bayad sa GCash, Maya o bank transfer.</p>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="sec-head label"><span>Paano magsimula</span><span>04</span></div>
+    <div class="steps">
+      <div class="step reveal"><span class="label">Step 1</span><h3>Mag-apply</h3><p>6 na tanong, tap lang. Isesend mo sa akin sa Instagram DM.</p></div>
+      <div class="step reveal"><span class="label">Step 2</span><h3>Usap muna tayo</h3><p>Titingnan ko ang goal at sitwasyon mo. Kung hindi ako ang tamang coach para sa'yo, sasabihin ko.</p></div>
+      <div class="step reveal"><span class="label">Step 3</span><h3>Simula na</h3><p>Pagkatapos ng bayad, makukuha mo ang macros at program mo sa loob ng 48 hours.</p></div>
+    </div>
+  </section>
+
+  <section id="apply" class="apply">
+    <div class="container">
+      <div class="sec-head label"><span>Apply</span><span>05</span></div>
+      <h2 class="display" style="margin-bottom:28px">Simulan natin.</h2>
+      <div class="quiz" id="quiz" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="sec-head label"><span>FAQ</span><span>06</span></div>
+    <div class="faq">
+      <details><summary>Beginner pa lang ako. Pwede ba?</summary><p>Oo. Mas maganda pa nga, kasi maaga mong matututunan ang tamang habits bago ka masanay sa mali.</p></details>
+      <details><summary>Kailangan ko bang mag-gym araw-araw?</summary><p>Hindi. Ibabase natin ang program sa ilang araw ang kaya mo talaga, kahit 3 days lang.</p></details>
+      <details><summary>Bawal ba ang fast food at sweets?</summary><p>Hindi. Flexible dieting ang approach ko. Basta pasok sa macros mo, pwede. Tuturuan kita kung paano.</p></details>
+      <details><summary>Online lang ba?</summary><p>Online ang coaching, kaya kahit saan ka sa Pilipinas. Ang posing sessions ay pwedeng online o in person sa Cavite.</p></details>
+      <details><summary>Paano ang bayad?</summary><p>GCash, Maya o bank transfer. Pwedeng hulugan ang 3, 6 at 12-month plans.</p></details>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="big">Narz<span>.</span></div>
+    <div class="foot-row">
+      <div><a href="https://www.instagram.com/naarrzz/">Instagram</a><a href="https://www.tiktok.com/@naarrzz">TikTok</a></div>
+      <div>Narz Angelo Alcaide · Online coach</div>
     </div>
   </div>
-</section>
-
-<section class="wrap" id="apply">
-  <div class="eyebrow">Apply</div>
-  <h2>Tingnan natin kung bagay tayo</h2>
-  <p class="sub">6 na tanong lang, tap lang. Sa dulo, ise-send mo sa akin sa Instagram DM.</p>
-
-  <div class="quiz" id="quiz">
-    <div class="bar"><i id="bar"></i></div>
-    <div id="step"></div>
-  </div>
-</section>
-
-<section class="wrap">
-  <div class="eyebrow">FAQ</div>
-  <h2>Mga tanong</h2>
-  <details><summary>Beginner pa lang ako, pwede ba?</summary><p>Oo. Mas maganda pa nga, kasi maaga mong matututunan ang tamang habits.</p></details>
-  <details><summary>Kailangan ko bang mag-gym araw-araw?</summary><p>Hindi. Ibabase natin ang program sa ilang araw ang kaya mo talaga, kahit 3 days lang.</p></details>
-  <details><summary>Bawal ba ang fast food at sweets?</summary><p>Hindi. Flexible dieting ang approach ko. Basta pasok sa macros mo, pwede.</p></details>
-  <details><summary>Paano ang bayad?</summary><p>GCash, Maya o bank transfer. Pwedeng hulugan ang 3, 6 at 12-month plans.</p></details>
-</section>
-
-<footer class="wrap">
-  <p>Narz Angelo Alcaide · Natural bodybuilder · Online coach</p>
-  <p style="margin-top:6px"><a href="https://www.instagram.com/naarrzz/">Instagram</a> · <a href="https://www.tiktok.com/@naarrzz">TikTok</a></p>
 </footer>
 
-<div class="toast" id="toast"></div>
+<div class="dock" id="dock">
+  <p><b>Online coaching</b>mula ₱2,500 / buwan</p>
+  <a class="btn" href="#apply">Mag-apply</a>
+</div>
 
 <script>
 const IG = "naarrzz";
 const Q = [
-  {k:"goal", t:"Ano ang main goal mo?", h:"Piliin ang pinakamalapit.", o:[
-    ["🔥","Magbawas ng taba","Fat loss / cut"],
-    ["💪","Lumaki at lumakas","Muscle gain / lean bulk"],
-    ["🏆","Mag-compete","Contest prep"],
-    ["🕺","Matutong mag-pose","Posing coaching"]]},
-  {k:"exp", t:"Gaano ka na katagal nagwo-workout?", o:[
-    ["🌱","Kakasimula lang","Below 6 months"],
-    ["📈","6 months to 2 years",""],
-    ["🏋️","2 years pataas",""],
-    ["🥇","Nakapag-compete na",""]]},
-  {k:"days", t:"Ilang araw ka kayang mag-train kada linggo?", o:[
-    ["3️⃣","3 days",""],["4️⃣","4 days",""],["5️⃣","5 days",""],["6️⃣","6 days pataas",""]]},
+  {k:"goal", t:"Ano ang goal mo?", h:"Piliin ang pinakamalapit.", o:[
+    ["Magbawas ng taba","Cut / fat loss"],["Lumaki at lumakas","Lean bulk / muscle gain"],["Mag-compete","Contest prep"],["Matutong mag-pose","Posing coaching"]]},
+  {k:"exp", t:"Gaano ka na katagal nagbubuhat?", o:[
+    ["Kakasimula lang","Below 6 months"],["6 months to 2 years",""],["2 years pataas",""],["Nakapag-compete na",""]]},
+  {k:"days", t:"Ilang araw kang kayang mag-train?", h:"Kada linggo, yung totoo.", o:[
+    ["3 days",""],["4 days",""],["5 days",""],["6 days pataas",""]]},
   {k:"food", t:"Paano ka kumain ngayon?", o:[
-    ["🍱","Bahala na","Walang tracking"],
-    ["📱","Nagta-track minsan","May app pero hindi consistent"],
-    ["✅","Nagta-track ng macros",""],
-    ["😵","Nag-diet na, pero hindi sustainable",""]]},
-  {k:"plan", t:"Aling plan ang tinitingnan mo?", h:"Pwedeng hindi pa sigurado.", o:[
-    ["1️⃣","1 month","₱3,500"],
-    ["⭐","3 months","₱9,000, pwedeng hulugan"],
-    ["📆","6 months o 1 year","Pinakamababa kada buwan"],
-    ["🤔","Hindi pa sigurado","Gusto ko munang magtanong"]]},
-  {k:"info", form:true, t:"Last na! Sino ka?"}
+    ["Bahala na","Walang tracking"],["Nagta-track minsan","Hindi consistent"],["Nagta-track ng macros",""],["Nag-diet na pero hindi tumagal",""]]},
+  {k:"plan", t:"Aling plan ang tinitingnan mo?", h:"Okay lang kung hindi pa sigurado.", o:[
+    ["1 month","₱3,500"],["3 months","₱9,000, pwedeng hulugan"],["6 months o 1 year","Pinakatipid kada buwan"],["Posing","₱800 pataas"],["Hindi pa sigurado","Gusto ko munang magtanong"]]},
+  {k:"info", form:true, t:"Sino ka?", h:"Huling tanong na."}
 ];
-const A = {};
-let i = 0;
+const A = {}; let i = 0;
 const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const L = "ABCDE";
 
+function head(){
+  const n = Math.min(i + 1, Q.length);
+  return `<div class="q-top"><span class="q-count">${String(n).padStart(2,"0")} / ${String(Q.length).padStart(2,"0")}</span>
+    <button class="q-back" onclick="back()" ${i===0?"disabled":""}>← Bumalik</button></div>
+    <div class="prog"><i style="width:${(i/Q.length)*100}%"></i></div>`;
+}
 function render(){
-  $("#bar").style.width = (i / Q.length * 100) + "%";
-  const el = $("#step");
+  const el = $("#quiz");
   if (i >= Q.length) return done(el);
   const q = Q[i];
+  let body;
   if (q.form){
-    el.innerHTML = `<div class="q"><h3>${q.t}</h3><p class="hint">Para alam ko kung sino ang kausap ko.</p>
-      <label class="field"><span>Pangalan</span><input id="f-name" autocomplete="name" value="${A.name||""}"></label>
-      <label class="field"><span>Edad</span><input id="f-age" inputmode="numeric" value="${A.age||""}"></label>
-      <label class="field"><span>Kahit ano pang gusto mong sabihin (injuries, schedule, show date)</span><textarea id="f-note">${A.note||""}</textarea></label>
-      <div class="nav"><button class="btn back" onclick="back()">←</button><button class="btn primary" onclick="finish()">Tapos na</button></div></div>`;
-    return;
+    body = `<p class="q-title">${q.t}</p><p class="q-hint">${q.h}</p>
+      <label class="fld"><span>Pangalan</span><input id="f-name" autocomplete="name" value="${esc(A.name||"")}"></label>
+      <label class="fld"><span>Edad</span><input id="f-age" inputmode="numeric" value="${esc(A.age||"")}"></label>
+      <label class="fld"><span>May gusto ka pang sabihin? (injury, schedule, show date)</span><textarea id="f-note">${esc(A.note||"")}</textarea></label>
+      <button class="btn full" onclick="finish()">Tapos na <span class="arr">→</span></button>`;
+  } else {
+    body = `<p class="q-title">${q.t}</p><p class="q-hint">${q.h||"Tap mo lang."}</p>
+      <div class="opts">${q.o.map((o,n)=>`<button class="opt${A[q.k]===o[0]?" on":""}" onclick="pick(${n})"><span class="k">${L[n]}</span><span><b>${o[0]}</b>${o[1]?`<small>${o[1]}</small>`:""}</span></button>`).join("")}</div>`;
   }
-  el.innerHTML = `<div class="q"><h3>${q.t}</h3>${q.h?`<p class="hint">${q.h}</p>`:`<p class="hint">Tap mo lang.</p>`}
-    <div class="opts">${q.o.map((o,n)=>`<button class="opt${A[q.k]===o[1]?" on":""}" onclick="pick(${n})"><span class="e">${o[0]}</span><span>${o[1]}${o[2]?`<small>${o[2]}</small>`:""}</span></button>`).join("")}</div>
-    ${i>0?`<div class="nav"><button class="btn back" onclick="back()">← Back</button></div>`:""}</div>`;
+  el.innerHTML = `<div class="fade">${head()}${body}</div>`;
 }
 function pick(n){
-  const q = Q[i]; A[q.k] = q.o[n][1];
+  const q = Q[i]; A[q.k] = q.o[n][0];
   document.querySelectorAll(".opt").forEach((b,m)=>b.classList.toggle("on", m===n));
-  setTimeout(()=>{ i++; render(); }, 180);
+  setTimeout(()=>{ i++; render(); }, 200);
 }
-function back(){ saveForm(); i = Math.max(0, i-1); render(); }
-function saveForm(){
-  if (!$("#f-name")) return;
-  A.name = $("#f-name").value.trim(); A.age = $("#f-age").value.trim(); A.note = $("#f-note").value.trim();
-}
+function saveForm(){ if (!$("#f-name")) return; A.name=$("#f-name").value.trim(); A.age=$("#f-age").value.trim(); A.note=$("#f-note").value.trim(); }
+function back(){ saveForm(); if (i>0){ i--; render(); } }
 function finish(){
   saveForm();
-  if (!A.name){ toast("Pakilagay ang pangalan mo"); $("#f-name").focus(); return; }
+  if (!A.name){ $("#f-name").focus(); $("#f-name").style.borderBottomColor="var(--accent)"; return; }
   i++; render();
 }
 function message(){
-  return `Hi Narz! Interested ako sa coaching 🙌
+  return `Hi Narz! Nag-apply ako sa site mo.
 
 Pangalan: ${A.name}${A.age?`, ${A.age}`:""}
 Goal: ${A.goal}
 Experience: ${A.exp}
-Training days: ${A.days}
-Pagkain ngayon: ${A.food}
-Plan: ${A.plan}${A.note?`
-Notes: ${A.note}`:""}`;
+Training: ${A.days} kada linggo
+Pagkain: ${A.food}
+Plan: ${A.plan}${A.note?`\nNotes: ${A.note}`:""}`;
 }
 function done(el){
-  el.innerHTML = `<div class="q"><h3>Ayos, ${A.name.split(" ")[0]}! 🔥</h3>
-    <p class="hint">Ito ang message mo. Tap ang button, naka-copy na ito, tapos i-paste mo lang sa DM ko.</p>
-    <div class="summary">${message().replace(/</g,"&lt;")}</div>
-    <button class="btn primary" onclick="send()">Copy at buksan ang IG DM</button>
-    <button class="btn ghost" onclick="i=0;render()">Ulitin</button>
-    <p class="small">Sasagot ako sa loob ng 24 hours.</p></div>`;
+  el.innerHTML = `<div class="fade"><div class="q-top"><span class="q-count">Tapos na</span><button class="q-back" onclick="back()">← Bumalik</button></div>
+    <div class="prog"><i style="width:100%"></i></div>
+    <p class="q-title">Salamat, ${esc(A.name.split(" ")[0])}.</p>
+    <p class="q-hint">I-send mo lang ito sa DM ko. Pag-tap mo ng button, naka-copy na ang message at bubukas ang Instagram.</p>
+    <div class="msg">${esc(message())}</div>
+    <button class="btn full" id="send">Copy at buksan ang IG DM <span class="arr">→</span></button>
+    <p class="q-fine">Karaniwan akong sumasagot sa loob ng isang araw.</p></div>`;
+  $("#send").onclick = async () => {
+    try { await navigator.clipboard.writeText(message()); $("#send").firstChild.textContent = "Copied, binubuksan ang IG… "; } catch(e){}
+    setTimeout(()=>{ location.href = `https://ig.me/m/${IG}`; }, 600);
+  };
 }
-async function send(){
-  try { await navigator.clipboard.writeText(message()); toast("Copied! I-paste mo sa DM"); }
-  catch(e){ toast("Pakikopya ang message sa itaas"); }
-  setTimeout(()=>{ location.href = `https://ig.me/m/${IG}`; }, 700);
-}
-let tt;
-function toast(t){ const el=$("#toast"); el.textContent=t; el.classList.add("show"); clearTimeout(tt); tt=setTimeout(()=>el.classList.remove("show"),2200); }
 render();
+
+/* segmented control */
+const seg = $("#seg");
+seg.addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  const p = b.dataset.p; seg.dataset.i = p;
+  seg.querySelectorAll("button").forEach(x => x.setAttribute("aria-selected", x===b));
+  $("#p0").hidden = p!=="0"; $("#p1").hidden = p!=="1";
+});
+
+/* header border, dock, reveals */
+const bar = $("#bar"), dock = $("#dock"), apply = $("#apply"), hero = document.querySelector(".hero");
+let applyVisible = false;
+new IntersectionObserver(([e]) => { applyVisible = e.isIntersecting; sync(); }, {threshold:.05}).observe(apply);
+function sync(){
+  bar.classList.toggle("scrolled", scrollY > 8);
+  dock.classList.toggle("show", scrollY > hero.offsetHeight * .8 && !applyVisible);
+}
+addEventListener("scroll", sync, {passive:true}); sync();
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }), {rootMargin:"0px 0px -8% 0px"});
+document.querySelectorAll(".reveal").forEach(el => io.observe(el));
 </script>
 </body>
 </html>
