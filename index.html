@@ -7,6 +7,7 @@
 <title>Narz — Online Coaching at Posing</title>
 <meta name="description" content="Online coaching at posing coaching ni Narz Angelo Alcaide. Flexible dieting, natural bodybuilding, at plan na kasya sa totoong buhay mo.">
 <meta name="theme-color" content="#f2efe8">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta property="og:title" content="Narz — Online Coaching at Posing">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://naarrzz.github.io/coaching/">
@@ -30,6 +31,7 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%}
+p,li,summary,h1,h2,h3{text-wrap:pretty}
 body{background:var(--paper);color:var(--ink);font:400 16px/1.55 var(--body);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 img{display:block;max-width:100%}
 a{color:inherit}
@@ -223,7 +225,7 @@ footer .big span{color:var(--accent)}
 .pains{list-style:none;border-top:1px solid var(--line)}
 .pains li{position:relative;padding:18px 0 18px 38px;border-bottom:1px solid var(--line);font-size:17px;line-height:1.45}
 .pains li::before{content:"×";position:absolute;left:0;top:14px;font-family:var(--display);font-weight:800;font-size:24px;color:var(--accent)}
-.after{margin-top:22px;font-size:17px;max-width:52ch}
+.after{margin-top:22px;font-size:17px;max-width:72ch}
 .after b{font-weight:600}
 /* story */
 .story{display:grid;gap:22px}
@@ -289,7 +291,7 @@ footer .big span{color:var(--accent)}
     <div class="hero-grid">
       <h1 class="display hero-h" data-en="Eat up.&lt;span class=&quot;sub&quot;&gt;Just make it &lt;span class=&quot;a&quot;&gt;fit your macros.&lt;/span&gt;&lt;/span&gt;">Kumain ka.<span class="sub">Basta pasok pa rin <span class="a">sa macros.</span></span></h1>
       <figure class="frame hero-v">
-        <video src="hero.mp4" poster="hero-poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="Narz, natural bodybuilder, nagpo-pose"></video>
+        <video src="hero.mp4" poster="hero-poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="Narz, natural bodybuilder, nagpo-pose" data-en-aria="Narz, natural bodybuilder, posing"></video>
         <figcaption><span>Natural champion</span><span>Cavite, PH</span></figcaption>
       </figure>
       <div class="hero-c">
@@ -363,7 +365,7 @@ footer .big span{color:var(--accent)}
     <div class="container">
       <div class="sec-head label"><span>Rates</span><span>05</span></div>
       <h2 class="display rates-h" data-en="Longer plan, &lt;em&gt;better value.&lt;/em&gt;">Mas mahaba, <em>mas sulit.</em></h2>
-      <figure class="shot"><video src="rates.mp4" poster="rates.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Narz, nagfle-flex"></video></figure>
+      <figure class="shot"><video src="rates.mp4" poster="rates.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Narz, nagfle-flex" data-en-aria="Narz, flexing"></video></figure>
 
       <div class="seg-wrap"><div class="seg" role="tablist" data-i="0" id="seg">
         <span class="thumb"></span>
@@ -489,7 +491,7 @@ footer .big span{color:var(--accent)}
 </footer>
 
 <div class="dock" id="dock">
-  <p><b>Online coaching</b>as low as ₱82 / day</p>
+  <p data-en="&lt;b&gt;Online coaching&lt;/b&gt;as low as ₱82 / day"><b>Online coaching</b>simula ₱82 / day</p>
   <a class="btn" href="#apply" data-en="Apply">Mag-apply</a>
 </div>
 
@@ -621,6 +623,11 @@ function setLang(l){
     if (el.dataset.fil == null) el.dataset.fil = el.innerHTML;
     el.innerHTML = l === "en" ? el.dataset.en : el.dataset.fil;
   });
+  document.querySelectorAll("[data-en-aria]").forEach(el => {
+    if (el.dataset.filAria == null) el.dataset.filAria = el.getAttribute("aria-label");
+    el.setAttribute("aria-label", l === "en" ? el.dataset.enAria : el.dataset.filAria);
+  });
+  document.title = l === "en" ? "Narz — Online Coaching & Posing" : "Narz — Online Coaching at Posing";
   document.querySelectorAll("#lang [data-l]").forEach(b => b.setAttribute("aria-pressed", b.dataset.l === l));
   render();
   dispatchEvent(new Event("resize")); // rebuild the ticker for the new text width
@@ -653,11 +660,12 @@ seg.addEventListener("click", e => {
 
 /* header border, dock, reveals */
 const bar = $("#bar"), dock = $("#dock"), apply = $("#apply"), hero = document.querySelector(".hero");
-let applyVisible = false;
+let applyVisible = false, footVisible = false;
+new IntersectionObserver(([e]) => { footVisible = e.isIntersecting; sync(); }, {threshold:0}).observe(document.querySelector("footer"));
 new IntersectionObserver(([e]) => { applyVisible = e.isIntersecting; sync(); }, {threshold:.05}).observe(apply);
 function sync(){
   bar.classList.toggle("scrolled", scrollY > 8);
-  dock.classList.toggle("show", scrollY > hero.offsetHeight * .8 && !applyVisible);
+  dock.classList.toggle("show", scrollY > hero.offsetHeight * .8 && !applyVisible && !footVisible);
 }
 addEventListener("scroll", sync, {passive:true}); sync();
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }), {rootMargin:"0px 0px 20% 0px"});
