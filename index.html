@@ -8,7 +8,7 @@
 <meta name="description" content="Online coaching at posing coaching ni Narz Angelo Alcaide. Flexible dieting, natural bodybuilding, at plan na kasya sa totoong buhay mo.">
 <meta name="theme-color" content="#f2efe8">
 <meta property="og:title" content="Narz — Online Coaching at Posing">
-<meta property="og:description" content="Kumain ka. Pasok pa rin sa macros. Flexible prep para sa busy na tao.">
+<meta property="og:description" content="Kumain ka. Basta pasok pa rin sa macros. Flexible prep para sa busy na tao.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -52,8 +52,9 @@ h2.display{font-size:clamp(44px,11vw,88px)}
 /* hero */
 .hero{padding-top:28px;padding-bottom:56px}
 .hero .kicker{display:flex;justify-content:space-between;border-top:1.5px solid var(--ink);padding-top:10px;margin-bottom:22px}
-.hero h1{font-size:clamp(56px,16.2vw,168px)}
+.hero h1{font-size:clamp(64px,19.5vw,220px)}
 .hero h1 .a{color:var(--accent)}
+.hero h1 .sub{display:block;font-size:.5em;line-height:.95;margin-top:.12em;font-stretch:72%}
 .hero-grid{display:grid;gap:28px;margin-top:28px}
 @media (min-width:860px){.hero-grid{grid-template-columns:1.1fr .9fr;align-items:end}}
 .hero .lede{font-size:19px;line-height:1.45;max-width:30ch}
@@ -119,7 +120,8 @@ section{padding-top:84px;padding-bottom:84px}
 .seg[data-i="1"] .thumb{transform:translateX(100%)}
 .plans{border-top:1px solid #333}
 .plan{display:grid;grid-template-columns:1fr auto;grid-template-areas:"tag tag" "name was" "name price" "name save" "terms terms";gap:2px 16px;padding:22px 0;border-bottom:1px solid #333;position:relative}
-.plan .was{grid-area:was;text-align:right;color:#8a857b;font-size:15px;text-decoration:line-through;text-decoration-thickness:1.5px;font-variant-numeric:tabular-nums}
+.plan .was{grid-area:was;text-align:right;color:#8a857b;font-size:14px;font-variant-numeric:tabular-nums}
+.plan .was s{text-decoration-thickness:1.5px;font-size:15px}
 .plan .day{color:var(--accent);font-weight:700;font-size:16px}
 .day-note{margin-top:22px;font-family:var(--display);font-stretch:80%;font-weight:750;font-size:22px;line-height:1.1}
 .day-note span{color:var(--accent)}
@@ -176,6 +178,9 @@ section{padding-top:84px;padding-bottom:84px}
 .fld textarea{min-height:72px;resize:vertical}
 .msg{background:var(--paper-2);border-left:3px solid var(--accent);padding:16px;font-size:14.5px;white-space:pre-wrap;margin:18px 0}
 .full{width:100%}
+.full+.full{margin-top:10px}
+.btn.alt{background:var(--ink)}
+.btn.alt:hover{background:#000}
 .q-fine{color:var(--muted);font-size:13px;margin-top:12px}
 .fade{animation:fade .35s var(--ease)}
 @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
@@ -217,6 +222,11 @@ footer .big span{color:var(--accent)}
 .stack p{color:var(--ink-2);font-size:15.5px}
 /* plans width on desktop */
 .plans,.day-note,.panel>.muted{max-width:680px}
+/* guarantee */
+.guarantee{margin-top:30px;max-width:680px;border:1.5px solid var(--paper);padding:22px}
+.guarantee .label{color:var(--accent);display:block;margin-bottom:10px}
+.guarantee h3{font-family:var(--display);font-stretch:80%;font-weight:800;font-size:28px;line-height:1.02;text-transform:uppercase;margin-bottom:10px}
+.guarantee p{color:#d8d3c8;font-size:15.5px}
 /* ps */
 .ps{margin-top:44px;padding:22px;border:1.5px solid var(--ink);max-width:680px}
 .ps p{font-size:17px}
@@ -253,7 +263,7 @@ footer .big span{color:var(--accent)}
 <main id="top">
   <div class="container hero">
     <div class="kicker label"><span>Online coaching</span><span>Natural bodybuilding</span></div>
-    <h1 class="display">Kumain ka.<br>Pasok pa rin<br><span class="a">sa macros.</span></h1>
+    <h1 class="display">Kumain ka.<span class="sub">Basta pasok pa rin <span class="a">sa macros.</span></span></h1>
 
     <div class="hero-grid">
       <figure class="frame reveal">
@@ -309,7 +319,7 @@ footer .big span{color:var(--accent)}
     <div class="sec-head label"><span>Bakit nagfa-fail karamihan</span><span>03</span></div>
     <h2 class="display reveal" style="margin-bottom:36px">Walang bawal.<br>May sistema.</h2>
     <div class="rows">
-      <div class="row reveal"><span class="n">01</span><h3>Macros, hindi listahan ng bawal</h3><p>Karamihan ng diet, puro bawal kaya hindi tumatagal. Dito, may target ka lang sa protein, carbs, at fats. Kahit kumakain ka sa labas or kasama barkada, kaya mo pa rin sundan.</p></div>
+      <div class="row reveal"><span class="n">01</span><h3>Macros, hindi listahan ng bawal</h3><p>Karamihan ng diet, puro bawal kaya hindi tumatagal. Dito, may target ka lang sa protein, carbs, at fats. Gusto mo ng freedom? Flexible macros. Ayaw mo na mag-isip? Meal plan. Ikaw pipili.</p></div>
       <div class="row reveal"><span class="n">02</span><h3>Data yung basehan, hindi salamin</h3><p>Weekly check-in tayo: timbang, photos, lakas sa gym, tulog. Dun tayo nagde-decide. Hindi natin babaguhin yung plan dahil lang sa isang bad day.</p></div>
       <div class="row reveal"><span class="n">03</span><h3>Kasya sa schedule mo</h3><p>3 days man or 6 days yung kaya mo, dun natin ibabase yung program. Hindi mo kailangan tumira sa gym.</p></div>
       <div class="row reveal"><span class="n">04</span><h3>Natural, at sustainable</h3><p>Yung goal ay progress na kaya mong ituloy, hindi crash diet na ilang weeks lang tatagal.</p></div>
@@ -324,7 +334,8 @@ footer .big span{color:var(--accent)}
       <div class="item reveal"><span class="n">03</span><div><h3>Weekly check-in</h3><p>Ina-adjust ko yung plan mo every week based sa progress mo.</p></div></div>
       <div class="item reveal"><span class="n">04</span><div><h3>Chat support</h3><p>May tanong ka? Message mo lang ako, hindi mo kailangan hintayin yung check-in.</p></div></div>
       <div class="item reveal"><span class="n">05</span><div><h3>Form check</h3><p>Send mo yung videos mo, iche-check ko yung form mo.</p></div></div>
-      <div class="item reveal"><span class="n">06</span><div><h3>Eating out guide</h3><p>Paano pumasok sa macros kahit sa Jollibee, sa handaan, or sa inuman.</p></div></div>
+      <div class="item reveal"><span class="n">06</span><div><h3>Meal plan, kung gusto mo</h3><p>Ayaw mo na mag-isip kung paano mahi-hit yung macros mo? Gagawan kita ng meal plan na pasok na, gamit yung pagkaing gusto mo at abot-kaya.</p></div></div>
+      <div class="item reveal"><span class="n">07</span><div><h3>Eating out guide</h3><p>Paano pumasok sa macros kahit sa Jollibee, sa handaan, or sa inuman.</p></div></div>
     </div>
   </section>
 
@@ -348,21 +359,25 @@ footer .big span{color:var(--accent)}
           </div>
           <div class="plan feat">
             <div class="tag">Dito nagsisimula karamihan</div>
-            <h3>3 Months</h3><div class="was">₱10,500</div><div class="price">₱9,000</div>
+            <h3>3 Months</h3><div class="was"><s>₱10,500</s> kung monthly</div><div class="price">₱9,000</div>
             <div class="terms">₱4,500 × 2 &nbsp;|&nbsp; ₱2,000 down + ₱3,500 × 2</div><div class="save"><span class="day">₱100</span> / day · <b>save ₱1,500</b></div>
           </div>
           <div class="plan">
-            <h3>6 Months</h3><div class="was">₱21,000</div><div class="price">₱16,500</div>
+            <h3>6 Months</h3><div class="was"><s>₱21,000</s> kung monthly</div><div class="price">₱16,500</div>
             <div class="terms">₱8,250 × 2 &nbsp;|&nbsp; ₱5,500 × 3</div><div class="save"><span class="day">≈ ₱92</span> / day · <b>save ₱4,500</b></div>
           </div>
           <div class="plan">
-            <h3>1 Year</h3><div class="was">₱42,000</div><div class="price">₱30,000</div>
+            <h3>1 Year</h3><div class="was"><s>₱42,000</s> kung monthly</div><div class="price">₱30,000</div>
             <div class="terms">₱7,500 per quarter</div><div class="save"><span class="day">≈ ₱82</span> / day · <b>save ₱12,000</b></div>
           </div>
         </div>
         <p class="day-note">Sa 3 months, <span>₱100 per day</span> lang. Mas mura pa sa isang iced coffee.</p>
-        <p class="muted" style="font-size:13px;margin-top:8px">Yung naka-ekis na price ay kung monthly ka magbabayad (₱3,500 × number of months).</p>
-      </div>
+        <div class="guarantee">
+          <span class="label">14-day guarantee</span>
+          <h3>Try mo muna. Kung hindi para sa'yo, full refund.</h3>
+          <p>Sa first 14 days ng coaching, kung feel mo na hindi tayo bagay, sabihan mo lang ako at ibabalik ko yung buong bayad mo. Walang hassle, walang tanong. Ako na sasalo ng risk.</p>
+        </div>
+              </div>
 
       <div class="panel" id="p1" hidden>
         <div class="plans">
@@ -371,7 +386,7 @@ footer .big span{color:var(--accent)}
             <div class="terms">45–60 mins, online / in person</div><div class="save">₱800 / session</div>
           </div>
           <div class="plan">
-            <h3>4 Sessions</h3><div class="was">₱3,200</div><div class="price">₱2,800</div>
+            <h3>4 Sessions</h3><div class="was"><s>₱3,200</s> kung per session</div><div class="price">₱2,800</div>
             <div class="terms">Gamitin mo kahit kailan bago yung show</div><div class="save">₱700 / session · <b>save ₱400</b></div>
           </div>
           <div class="plan feat">
@@ -412,7 +427,7 @@ footer .big span{color:var(--accent)}
   <section class="container" style="padding-top:0">
     <div class="sec-head label"><span>Paano mag-start</span><span>07</span></div>
     <div class="steps">
-      <div class="step reveal"><span class="label">Step 1</span><h3>Mag-apply</h3><p>6 questions lang, tap lang. Ise-send mo sa IG DM ko.</p></div>
+      <div class="step reveal"><span class="label">Step 1</span><h3>Mag-apply</h3><p>7 questions lang, tap lang. Ise-send mo sa IG DM ko.</p></div>
       <div class="step reveal"><span class="label">Step 2</span><h3>Usap muna tayo</h3><p>Titingnan ko yung goal at situation mo. Kung hindi ako yung tamang coach para sa'yo, sasabihin ko.</p></div>
       <div class="step reveal"><span class="label">Step 3</span><h3>Start na</h3><p>After ng payment, makukuha mo yung macros at program mo within 48 hours.</p></div>
     </div>
@@ -431,12 +446,14 @@ footer .big span{color:var(--accent)}
     <div class="faq">
       <details><summary>"Wala akong time mag-workout."</summary><p>Hindi mo kailangan tumira sa gym. Kahit 3 days a week lang, dun natin ibabase yung program mo.</p></details>
       <details><summary>"Mahilig ako kumain, hindi ko kaya mag-diet."</summary><p>Good, kasi hindi 'to yung diet na puro bawal. Rice? Pwede. Fast food? Pwede. Dessert? Pwede. Basta pasok sa macros mo, at tuturuan kita kung paano.</p></details>
+      <details><summary>"Ayaw ko na mag-isip, pwede bang meal plan na lang?"</summary><p>Pwede! Kung mas gusto mo na sabihin ko na lang kung ano kakainin mo, gagawan kita ng meal plan na pasok na sa macros mo. Pwede rin natin palitan anytime kung gusto mo na maging flexible.</p></details>
       <details><summary>"Beginner pa lang ako."</summary><p>Mas okay nga yun, kasi maaga mong matututunan yung tamang habits bago ka masanay sa mali.</p></details>
       <details><summary>"Online lang ba?"</summary><p>Yes, online yung coaching kaya kahit saan ka sa Pilipinas. Yung posing sessions, pwedeng online / in person sa Cavite.</p></details>
+      <details><summary>"Paano kung hindi pala para sa akin?"</summary><p>May 14-day guarantee. Sa first 14 days, kung feel mo hindi tayo bagay, full refund.</p></details>
       <details><summary>"Paano yung payment?"</summary><p>GCash, Maya, or bank transfer. Pwedeng installment yung 3, 6, at 12-month plans.</p></details>
     </div>
     <div class="ps reveal">
-      <p><b>P.S.</b> Hindi mo kailangan mag-suffer para makuha yung physique na gusto mo. Kailangan mo lang ng plan na kaya mong sundan. Kung ready ka na, <a href="#apply">mag-apply ka dito</a>. 6 questions lang.</p>
+      <p><b>P.S.</b> Hindi mo kailangan mag-suffer para makuha yung physique na gusto mo. Kailangan mo lang ng plan na kaya mong sundan. Kung ready ka na, <a href="#apply">mag-apply ka dito</a>. 7 questions lang.</p>
     </div>
   </section>
 </main>
@@ -458,6 +475,7 @@ footer .big span{color:var(--accent)}
 
 <script>
 const IG = "naarrzz";
+const FB = ""; // Messenger username, e.g. "naarrzz" (m.me/USERNAME). Empty = IG only.
 const Q = [
   {k:"goal", t:"Ano ang goal mo?", h:"Piliin ang pinakamalapit.", o:[
     ["Magbawas ng taba","Cut / fat loss"],["Lumaki at lumakas","Lean bulk / muscle gain"],["Mag-compete","Contest prep"],["Matutong mag-pose","Posing coaching"]]},
@@ -467,6 +485,8 @@ const Q = [
     ["3 days",""],["4 days",""],["5 days",""],["6 days pataas",""]]},
   {k:"food", t:"Paano ka kumain ngayon?", o:[
     ["Bahala na","Walang tracking"],["Nagta-track minsan","Hindi consistent"],["Nagta-track ng macros",""],["Nag-diet na dati pero hindi tumagal",""]]},
+  {k:"style", t:"Anong style ang gusto mo?", o:[
+    ["Flexible macros","Ako bahala kung ano kakainin ko, basta pasok"],["Meal plan","Sabihin mo na lang kung ano kakainin ko"],["Hindi pa sure","Tulungan mo ako pumili"]]},
   {k:"plan", t:"Anong plan yung tinitingnan mo?", h:"Okay lang kung hindi ka pa sure.", o:[
     ["1 month","₱3,500"],["3 months","₱9,000, pwedeng installment"],["6 months / 1 year","Pinaka-sulit per month"],["Posing","₱800 pataas"],["Hindi pa sure","Gusto ko muna magtanong"]]},
   {k:"info", form:true, t:"Sino ka?", h:"Huling tanong na."}
@@ -519,20 +539,23 @@ Goal: ${A.goal}
 Experience: ${A.exp}
 Training: ${A.days} per week
 Pagkain: ${A.food}
+Style: ${A.style}
 Plan: ${A.plan}${A.note?`\nNotes: ${A.note}`:""}`;
 }
 function done(el){
   el.innerHTML = `<div class="fade"><div class="q-top"><span class="q-count">Tapos na</span><button class="q-back" onclick="back()">← Bumalik</button></div>
     <div class="prog"><i style="width:100%"></i></div>
     <p class="q-title">Salamat, ${esc(A.name.split(" ")[0])}.</p>
-    <p class="q-hint">Send mo lang 'to sa DM ko. Pag tap mo ng button, naka-copy na yung message tapos magbubukas yung Instagram.</p>
+    <p class="q-hint">Send mo lang 'to sa DM ko. Pag tap mo ng button, naka-copy na yung message tapos magbubukas yung app. Paste mo lang.</p>
     <div class="msg">${esc(message())}</div>
-    <button class="btn full" id="send">Copy tapos open IG DM <span class="arr">→</span></button>
+    <button class="btn full" data-go="ig">Send sa Instagram <span class="arr">→</span></button>
+    ${FB?`<button class="btn full alt" data-go="fb">Send sa Messenger <span class="arr">→</span></button>`:""}
     <p class="q-fine">Usually nagre-reply ako within the day.</p></div>`;
-  $("#send").onclick = async () => {
-    try { await navigator.clipboard.writeText(message()); $("#send").firstChild.textContent = "Copied! Opening IG… "; } catch(e){}
-    setTimeout(()=>{ location.href = `https://ig.me/m/${IG}`; }, 600);
-  };
+  el.querySelectorAll("[data-go]").forEach(b => b.onclick = async () => {
+    try { await navigator.clipboard.writeText(message()); b.firstChild.textContent = "Copied! Opening… "; } catch(e){}
+    const url = b.dataset.go === "fb" ? `https://m.me/${FB}` : `https://ig.me/m/${IG}`;
+    setTimeout(()=>{ location.href = url; }, 600);
+  });
 }
 render();
 
