@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <script>document.documentElement.classList.add("js")</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Narz — Online Coaching at Posing</title>
+<title>Narz — Online Coaching &amp; Posing</title>
 <meta name="description" content="Online coaching at posing coaching ni Narz Angelo Alcaide. Flexible dieting, natural bodybuilding, at plan na kasya sa totoong buhay mo.">
 <meta name="theme-color" content="#f2efe8">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<meta property="og:title" content="Narz — Online Coaching at Posing">
+<meta property="og:title" content="Narz — Online Coaching &amp; Posing">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://naarrzz.github.io/coaching/">
 <meta property="og:image" content="https://naarrzz.github.io/coaching/og.jpg?v=3">
@@ -627,7 +627,7 @@ function setLang(l){
     if (el.dataset.filAria == null) el.dataset.filAria = el.getAttribute("aria-label");
     el.setAttribute("aria-label", l === "en" ? el.dataset.enAria : el.dataset.filAria);
   });
-  document.title = l === "en" ? "Narz — Online Coaching & Posing" : "Narz — Online Coaching at Posing";
+  document.title = "Narz — Online Coaching & Posing";
   document.querySelectorAll("#lang [data-l]").forEach(b => b.setAttribute("aria-pressed", b.dataset.l === l));
   render();
   dispatchEvent(new Event("resize")); // rebuild the ticker for the new text width
