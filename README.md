@@ -2,6 +2,8 @@
 
 Info page and application flow for my online coaching and posing coaching.
 
+<a href="https://naarrzz.github.io/coaching/"><img src="https://img.shields.io/badge/Open%20page-D93D1A?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Open the coaching page"></a>
+
 **Live:** https://naarrzz.github.io/coaching/
 
 - Single `index.html`, no build step (HTML, CSS, vanilla JS).
