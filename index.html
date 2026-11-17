@@ -81,6 +81,8 @@ h2.display{font-size:clamp(34px,8vw,56px)}
 .btn:active{transform:scale(.97)}
 .btn .arr{transition:transform .2s var(--ease)}
 .btn:hover .arr{transform:translateX(3px)}
+.btn:hover .arr.down{transform:translateY(3px)}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 .link{font-weight:600;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1.5px}
 
 .frame{position:relative;aspect-ratio:4/5;background:var(--paper-2);overflow:hidden}
@@ -293,7 +295,7 @@ footer .big span{color:var(--accent)}
       </div>
       <a class="hide-sm" href="#paano">Approach</a>
       <a class="hide-sm" href="#start" data-en="How it works">Paano</a>
-      <a class="pill" href="#apply" data-en="Free call">Free call</a>
+      <a class="pill" href="#apply" data-en="FREE consultation">FREE consultation</a>
     </nav>
   </div>
 </header>
@@ -310,8 +312,8 @@ footer .big span{color:var(--accent)}
       <div class="hero-c">
         <p class="lede" data-en="I&#x27;m a natural bodybuilder, and my whole prep was &lt;b&gt;flexible dieting&lt;/b&gt;. Burgers, ice cream, as long as it fit my macros. Even while juggling school, work, and content, I made it work. That&#x27;s exactly what I&#x27;ll teach you.">Natural bodybuilder ako, pero buong prep ko <b>flexible dieting lang</b>. May burger, may ice cream, basta pasok sa macros. Kahit sabay yung school, work, at content, kinaya. Ganito rin yung ituturo ko sa'yo.</p>
         <div class="cta-row">
-          <a class="btn" href="#apply" data-en="Find out why you’re stuck &lt;span class=&quot;arr&quot;&gt;→&lt;/span&gt;">Alamin kung bakit ka stuck <span class="arr">→</span></a>
-          <a class="link" href="#start" data-en="How it works">Paano 'to gumagana</a>
+          <a class="btn" href="#ikaw" data-en="Is this you? &lt;span class=&quot;arr down&quot;&gt;↓&lt;/span&gt;">Ikaw ba 'to? <span class="arr down">↓</span></a>
+          <a class="link" href="#apply" data-en="Skip to the FREE consultation">Diretso na sa FREE consultation</a>
         </div>
         <ul class="creds">
           <li><b>Champion</b><span>Natural Classic Physique and Bodybuilding</span></li>
@@ -325,7 +327,7 @@ footer .big span{color:var(--accent)}
     <span>Flexible dieting</span><i>/</i><span>Weekly check-ins</span><i>/</i><span>Natural</span><i>/</i><span>Posing</span><i>/</i><span>Meal plan</span><i>/</i><span data-en="Built for busy people">Para sa busy</span><i>/</i>
   </div></div></div>
 
-  <section class="container">
+  <section id="ikaw" class="container">
     <div class="sec-head label"><span>Sounds familiar?</span><span>01</span></div>
     <h2 class="display reveal" style="margin-bottom:28px" data-en="Is this you?">Ikaw ba 'to?</h2>
     <ul class="pains">
@@ -380,12 +382,12 @@ footer .big span{color:var(--accent)}
       <h2 class="display rates-h" data-en="Every goal is different. &lt;em&gt;Let’s talk first.&lt;/em&gt;">Iba-iba ang goal. <em>Usap muna tayo.</em></h2>
       <figure class="shot"><video src="rates.mp4" poster="rates.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Narz, nagfle-flex" data-en-aria="Narz, flexing"></video></figure>
       <div class="invest">
-        <p class="invest-p" data-en="I don’t hand out a plan without knowing your situation. On a free call, I’ll ask about your goal, what you’ve tried, and why it didn’t work. Then I’ll tell you which plan fits you, or if I’m not the right coach for you.">Hindi ako nagbibigay ng plan nang hindi ko alam yung situation mo. Sa free call, aalamin ko yung goal mo, yung mga nasubukan mo na, at kung bakit hindi nag-work. Tapos sasabihin ko kung anong plan ang swak sa'yo, o kung hindi ako yung tamang coach para sa'yo.</p>
+        <p class="invest-p" data-en="I don’t hand out a plan without knowing your situation. On a FREE consultation, I’ll ask about your goal, what you’ve tried, and why it didn’t work. Then I’ll tell you which plan fits you, or if I’m not the right coach for you.">Hindi ako nagbibigay ng plan nang hindi ko alam yung situation mo. Sa FREE consultation, aalamin ko yung goal mo, yung mga nasubukan mo na, at kung bakit hindi nag-work. Tapos sasabihin ko kung anong plan ang swak sa'yo, o kung hindi ako yung tamang coach para sa'yo.</p>
         <div class="from">
           <div><span class="label">Online coaching</span><p><b>as low as ₱82</b> / day</p></div>
           <div><span class="label">Posing</span><p><b>from ₱700</b> / session</p></div>
         </div>
-        <a class="btn full" href="#apply" data-en="Book a free call &lt;span class=&quot;arr&quot;&gt;→&lt;/span&gt;">Mag-book ng free call <span class="arr">→</span></a>
+        <a class="btn full" href="#apply" data-en="Book a FREE consultation &lt;span class=&quot;arr&quot;&gt;→&lt;/span&gt;">Mag-book ng FREE consultation <span class="arr">→</span></a>
         <div class="guarantee">
           <span class="label">14-day guarantee</span>
           <h3 data-en="Try it first. If it’s not for you, full refund.">Try mo muna. Kung hindi para sa'yo, full refund.</h3>
@@ -423,7 +425,7 @@ footer .big span{color:var(--accent)}
     <div class="sec-head label"><span data-en="How to start">Paano mag-start</span><span>07</span></div>
     <div class="steps">
       <div class="step reveal"><span class="label">Step 1</span><h3 data-en="Take the 1-min quiz">1-min quiz</h3><p data-en="A few taps. At the end you’ll see what’s most likely holding you back.">Ilang taps lang. Sa dulo, makikita mo kung ano yung pinaka-pumipigil sa progress mo.</p></div>
-      <div class="step reveal"><span class="label">Step 2</span><h3 data-en="Free call, 15–20 mins">Free call, 15–20 mins</h3><p data-en="We talk about your goal and situation. No pressure. If I’m not the right coach for you, I’ll tell you right away.">Pag-uusapan natin yung goal at situation mo. Walang pressure. Kung hindi ako yung tamang coach para sa'yo, sasabihin ko na agad.</p></div>
+      <div class="step reveal"><span class="label">Step 2</span><h3 data-en="FREE consultation, 15–20 mins">FREE consultation, 15–20 mins</h3><p data-en="We talk about your goal and situation. No pressure. If I’m not the right coach for you, I’ll tell you right away.">Pag-uusapan natin yung goal at situation mo. Walang pressure. Kung hindi ako yung tamang coach para sa'yo, sasabihin ko na agad.</p></div>
       <div class="step reveal"><span class="label">Step 3</span><h3 data-en="Let’s go">Start na</h3><p data-en="If we’re a fit, you’ll get your macros and program within 48 hours after payment.">Kung swak tayo, makukuha mo yung macros at program mo within 48 hours after ng payment.</p></div>
     </div>
   </section>
@@ -432,7 +434,7 @@ footer .big span{color:var(--accent)}
     <div class="container">
       <div class="sec-head label"><span data-en="1-min quiz">1-min quiz</span><span>08</span></div>
       <h2 class="display" style="margin-bottom:12px" data-en="Why aren’t you seeing progress?">Bakit hindi ka pa nagbabago?</h2>
-      <p class="after" style="margin:0 0 28px" data-en="Answer honestly. At the end, you’ll see what’s most likely holding you back, and you can book a free call.">Sagutin mo nang totoo. Sa dulo, makikita mo kung ano yung pinaka-pumipigil sa'yo, tapos pwede kang mag-book ng free call.</p>
+      <p class="after" style="margin:0 0 28px" data-en="Answer honestly. At the end, you’ll see what’s most likely holding you back, and you can book a FREE consultation.">Sagutin mo nang totoo. Sa dulo, makikita mo kung ano yung pinaka-pumipigil sa'yo, tapos pwede kang mag-book ng FREE consultation.</p>
       <div class="quiz" id="quiz" aria-live="polite"></div>
     </div>
   </section>
@@ -446,11 +448,11 @@ footer .big span{color:var(--accent)}
       <details><summary data-en="&quot;I&#x27;m a beginner / I don&#x27;t work out yet.&quot;">"Beginner pa lang ako / hindi pa ako nagwo-workout."</summary><p data-en="Even better. You&#x27;ll learn the right habits early, before the wrong ones stick. We&#x27;ll start from zero, step by step.">Mas okay nga yun, kasi maaga mong matututunan yung tamang habits bago ka masanay sa mali. Start tayo from zero, step by step.</p></details>
       <details><summary data-en="&quot;Is it online only?&quot;">"Online lang ba?"</summary><p data-en="Yes, coaching is online, so it works anywhere in the Philippines. Posing sessions can be online or in person in Cavite.">Yes, online yung coaching kaya kahit saan ka sa Pilipinas. Yung posing sessions, pwedeng online / in person sa Cavite.</p></details>
       <details><summary data-en="&quot;What if it&#x27;s not for me?&quot;">"Paano kung hindi pala para sa akin?"</summary><p data-en="There&#x27;s a 14-day guarantee. In the first 14 days, if you feel we&#x27;re not a fit, full refund.">May 14-day guarantee. Sa first 14 days, kung feel mo hindi tayo bagay, full refund.</p></details>
-      <details><summary data-en="&quot;How much is it?&quot;">"Magkano?"</summary><p data-en="Online coaching is as low as ₱82 a day, depending on how long the plan is. Posing starts at ₱700 a session. On the free call, I’ll tell you which plan fits your goal and budget. No pressure.">Online coaching, as low as ₱82 / day depende sa haba ng plan. Posing, from ₱700 / session. Sa free call, sasabihin ko kung anong plan ang swak sa goal at budget mo. Walang pressure.</p></details>
+      <details><summary data-en="&quot;How much is it?&quot;">"Magkano?"</summary><p data-en="Online coaching is as low as ₱82 a day, depending on how long the plan is. Posing starts at ₱700 a session. On the FREE consultation, I’ll tell you which plan fits your goal and budget. No pressure.">Online coaching, as low as ₱82 / day depende sa haba ng plan. Posing, from ₱700 / session. Sa FREE consultation, sasabihin ko kung anong plan ang swak sa goal at budget mo. Walang pressure.</p></details>
       <details><summary data-en="&quot;How do I pay?&quot;">"Paano yung payment?"</summary><p data-en="GCash, Maya, or bank transfer. Longer plans can be paid in installments.">GCash, Maya, or bank transfer. Pwedeng installment yung mas mahahabang plans.</p></details>
     </div>
     <div class="ps reveal">
-      <p data-en="&lt;b&gt;P.S.&lt;/b&gt; You don&#x27;t have to suffer to get the physique you want. You just need a plan you can actually follow. Start with the &lt;a href=&quot;#apply&quot;&gt;1-min quiz&lt;/a&gt;, then let&#x27;s talk on a free call."><b>P.S.</b> Hindi mo kailangan mag-suffer para makuha yung physique na gusto mo. Kailangan mo lang ng plan na kaya mong sundan. Start ka sa <a href="#apply">1-min quiz</a>, tapos usap tayo sa free call.</p>
+      <p data-en="&lt;b&gt;P.S.&lt;/b&gt; You don&#x27;t have to suffer to get the physique you want. You just need a plan you can actually follow. Start with the &lt;a href=&quot;#apply&quot;&gt;1-min quiz&lt;/a&gt;, then let&#x27;s talk on a FREE consultation."><b>P.S.</b> Hindi mo kailangan mag-suffer para makuha yung physique na gusto mo. Kailangan mo lang ng plan na kaya mong sundan. Start ka sa <a href="#apply">1-min quiz</a>, tapos usap tayo sa FREE consultation.</p>
     </div>
   </section>
 </main>
@@ -467,7 +469,7 @@ footer .big span{color:var(--accent)}
 
 <div class="dock" id="dock">
   <p><b>Online coaching</b>as low as ₱82 / day</p>
-  <a class="btn" href="#apply" data-en="Free call">Free call</a>
+  <a class="btn" href="#apply" data-en="FREE consultation">FREE consultation</a>
 </div>
 
 <script>
@@ -557,13 +559,13 @@ const R = {
 };
 const UI = {
   fil:{tap:"Tap mo lang.", back:"← Back", done:"Tapos na", name:"Pangalan", age:"Edad", note:"May gusto ka pang i-share? (injury, schedule, show date)",
-       finish:"Tingnan ang resulta", res:"Ang resulta mo", fix:"Ito yung gagawin natin:", book:"Mag-book ng free call (15–20 mins). Pag tap mo ng button, naka-copy na yung message tapos magbubukas yung app. Paste mo lang.",
+       finish:"Tingnan ang resulta", res:"Ang resulta mo", fix:"Ito yung gagawin natin:", book:"Mag-book ng FREE consultation (15–20 mins). Pag tap mo ng button, naka-copy na yung message tapos magbubukas yung app. Paste mo lang.",
        ig:"Book sa Instagram", fb:"Book sa Messenger", fine:"Usually nagre-reply ako within the day. Walang pressure sa call.", copied:"Copied! Opening… ",
-       msg:["Hi Narz! Sinagutan ko yung quiz sa site mo. Gusto ko mag-book ng free call.","Pangalan","Goal","Experience","Struggle","Nasubukan","Show","Bakit ngayon","Ready mag-invest","Notes","Resulta","Category"]},
+       msg:["Hi Narz! Sinagutan ko yung quiz sa site mo. Gusto ko mag-book ng FREE consultation.","Pangalan","Goal","Experience","Struggle","Nasubukan","Show","Bakit ngayon","Ready mag-invest","Notes","Resulta","Category"]},
   en: {tap:"Just tap one.", back:"← Back", done:"Done", name:"Name", age:"Age", note:"Anything else? (injuries, schedule, show date)",
-       finish:"See my result", res:"Your result", fix:"Here's what we'd do:", book:"Book a free call (15–20 mins). When you tap a button, the message is copied and the app opens. Then paste it.",
+       finish:"See my result", res:"Your result", fix:"Here's what we'd do:", book:"Book a FREE consultation (15–20 mins). When you tap a button, the message is copied and the app opens. Then paste it.",
        ig:"Book on Instagram", fb:"Book on Messenger", fine:"I usually reply within the day. No pressure on the call.", copied:"Copied! Opening… ",
-       msg:["Hi Narz! I took the quiz on your site. I'd like to book a free call.","Name","Goal","Experience","Struggle","Tried","Show","Why now","Ready to invest","Notes","Result","Category"]}
+       msg:["Hi Narz! I took the quiz on your site. I'd like to book a FREE consultation.","Name","Goal","Experience","Struggle","Tried","Show","Why now","Ready to invest","Notes","Result","Category"]}
 };
 const A = {}; let i = 0;
 const $ = s => document.querySelector(s);
