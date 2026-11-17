@@ -560,14 +560,18 @@ const R = {
 const UI = {
   fil:{tap:"Tap mo lang.", back:"← Back", done:"Tapos na", name:"Pangalan", age:"Edad", note:"May gusto ka pang i-share? (injury, schedule, show date)",
        finish:"Tingnan ang resulta", res:"Ang resulta mo", fix:"Ito yung gagawin natin:", book:"Mag-book ng FREE consultation (15–20 mins). Pag tap mo ng button, naka-copy na yung message tapos magbubukas yung app. Paste mo lang.",
-       ig:"Book sa Instagram", fb:"Book sa Messenger", fine:"Usually nagre-reply ako within the day. Walang pressure sa call.", copied:"Copied! Opening… ",
+       ig:"Book sa Instagram", fb:"Book sa Messenger", fine:"Usually nagre-reply ako within the day. Walang pressure sa call. Sine-save ko yung sagot mo para ma-follow up kita, hindi ko siya shine-share.", copied:"Copied! Opening… ",
        msg:["Hi Narz! Sinagutan ko yung quiz sa site mo. Gusto ko mag-book ng FREE consultation.","Pangalan","Goal","Experience","Struggle","Nasubukan","Show","Bakit ngayon","Ready mag-invest","Notes","Resulta","Category"]},
   en: {tap:"Just tap one.", back:"← Back", done:"Done", name:"Name", age:"Age", note:"Anything else? (injuries, schedule, show date)",
        finish:"See my result", res:"Your result", fix:"Here's what we'd do:", book:"Book a FREE consultation (15–20 mins). When you tap a button, the message is copied and the app opens. Then paste it.",
-       ig:"Book on Instagram", fb:"Book on Messenger", fine:"I usually reply within the day. No pressure on the call.", copied:"Copied! Opening… ",
+       ig:"Book on Instagram", fb:"Book on Messenger", fine:"I usually reply within the day. No pressure on the call. I save your answers so I can follow up, never shared.", copied:"Copied! Opening… ",
        msg:["Hi Narz! I took the quiz on your site. I'd like to book a FREE consultation.","Name","Goal","Experience","Struggle","Tried","Show","Why now","Ready to invest","Notes","Result","Category"]}
 };
 const A = {}; let i = 0;
+/* Leads: quiz answers go to Narz's private Google Sheet + Telegram (Apps Script, see coaching-leads). */
+const LEADS = "https://script.google.com/macros/s/AKfycbzocAx-z54ARgbjoMck6fPQAbZRSkHsYDURXYdHIWu3oI69gvx7_0BWy9RJxG2-a9AD/exec";
+const LID = (crypto.randomUUID ? crypto.randomUUID() : String(Math.random()).slice(2) + Date.now()).replace(/-/g, "");
+function lead(body){ if (!LEADS) return; try { fetch(LEADS, {method:"POST", mode:"no-cors", keepalive:true, headers:{"Content-Type":"text/plain"}, body:JSON.stringify({id:LID, ...body})}); } catch(e){} }
 const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const L = "ABCDEF";
@@ -577,6 +581,7 @@ const steps = () => Q.filter(q => !q.only || q.only === track());
 const qt = (q, k) => LANG === "en" ? q[k + "e"] : q[k];
 const opt = (q, n) => LANG === "en" ? [q.o[n][2], q.o[n][3]] : [q.o[n][0], q.o[n][1]];
 const ans = k => { const q = steps().find(x => x.k === k); return !q || A[k] == null || !q.o[A[k]] ? "" : opt(q, A[k])[0]; };
+const ansEn = k => { const q = steps().find(x => x.k === k); return !q || A[k] == null || !q.o[A[k]] ? "" : q.o[A[k]][2]; };
 const resultKey = () => { const q = steps().find(x => x.k === "pain"); return q && A.pain != null && q.o[A.pain] ? q.o[A.pain][4] : (track() === "posing" ? "p-exec" : "consistency"); };
 
 function head(){
@@ -625,6 +630,7 @@ ${m[10]}: ${LANG === "en" ? r.te : r.t}`;
 }
 function done(el){
   const r = R[resultKey()], en = LANG === "en";
+  lead({track: track(), lang: LANG, result: r.te, a: {name: A.name, age: A.age, note: A.note, goal: ansEn("goal"), exp: ansEn("exp"), pain: ansEn("pain"), tried: ansEn("tried"), why: ansEn("why"), div: ansEn("div"), when: ansEn("when"), invest: ansEn("invest")}});
   el.innerHTML = `<div class="fade"><div class="q-top"><button class="q-back" onclick="back()">${ui().back}</button><span class="q-count">${ui().done}</span></div>
     <div class="prog"><i style="width:100%"></i></div>
     <span class="label res-tag">${ui().res}, ${esc(A.name.split(" ")[0])}</span>
@@ -638,7 +644,7 @@ function done(el){
     ${FB?`<button class="btn full alt" data-go="fb">${ui().fb} <span class="arr">→</span></button>`:""}
     <p class="q-fine">${ui().fine}</p></div>`;
   el.querySelectorAll("[data-go]").forEach(b => b.onclick = async () => {
-    try { await navigator.clipboard.writeText(message()); b.firstChild.textContent = ui().copied; } catch(e){}
+    lead({event:"dm", via:b.dataset.go}); try { await navigator.clipboard.writeText(message()); b.firstChild.textContent = ui().copied; } catch(e){}
     const url = b.dataset.go === "fb" ? `https://m.me/${FB}` : `https://ig.me/m/${IG}`;
     setTimeout(()=>{ location.href = url; }, 600);
   });
