@@ -200,6 +200,10 @@ section{padding-top:84px;padding-bottom:84px}
 .full+.full{margin-top:10px}
 .btn.alt{background:var(--ink)}
 .btn.alt:hover{background:#000}
+.res-tag{color:var(--accent);display:block;margin-bottom:8px}
+.res-list{list-style:none;margin:6px 0 18px;border-top:1px solid var(--line)}
+.res-list li{display:grid;grid-template-columns:22px 1fr;gap:6px;padding:10px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.res-list li::before{content:"✓";color:var(--accent);font-weight:700}
 .q-fine{color:var(--muted);font-size:13px;margin-top:12px}
 .fade{animation:fade .35s var(--ease)}
 @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
@@ -242,6 +246,15 @@ footer .big span{color:var(--accent)}
 /* plans width on desktop */
 .panel{max-width:680px;margin-left:auto;margin-right:auto}
 .seg-wrap{text-align:center}
+.invest{max-width:680px;margin:28px auto 0}
+.invest-p{font-size:17px;color:#e6e2d9;margin-bottom:24px}
+.from{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #333;border-bottom:1px solid #333;margin-bottom:24px}
+.from>div{padding:18px 0}
+.from>div+div{border-left:1px solid #333;padding-left:18px}
+.from .label{color:#9c978d;display:block;margin-bottom:6px}
+.from p{font-size:15px;color:#bdb8ad}
+.from b{font-family:var(--display);font-stretch:75%;font-weight:800;font-size:30px;color:var(--paper);display:block;line-height:1.05}
+.btn.full{width:100%}
 #rates .pay-note{text-align:center}
 /* guarantee */
 .guarantee{margin-top:30px;border:1.5px solid var(--paper);padding:22px}
@@ -279,8 +292,8 @@ footer .big span{color:var(--accent)}
         <button data-l="fil" aria-pressed="true">FIL</button><span aria-hidden="true">/</span><button data-l="en" aria-pressed="false">EN</button>
       </div>
       <a class="hide-sm" href="#paano">Approach</a>
-      <a class="hide-sm" href="#rates">Rates</a>
-      <a class="pill" href="#apply" data-en="Apply">Mag-apply</a>
+      <a class="hide-sm" href="#start" data-en="How it works">Paano</a>
+      <a class="pill" href="#apply" data-en="Free call">Free call</a>
     </nav>
   </div>
 </header>
@@ -297,8 +310,8 @@ footer .big span{color:var(--accent)}
       <div class="hero-c">
         <p class="lede" data-en="I&#x27;m a natural bodybuilder, and my whole prep was &lt;b&gt;flexible dieting&lt;/b&gt;. Burgers, ice cream, as long as it fit my macros. Even while juggling school, work, and content, I made it work. That&#x27;s exactly what I&#x27;ll teach you.">Natural bodybuilder ako, pero buong prep ko <b>flexible dieting lang</b>. May burger, may ice cream, basta pasok sa macros. Kahit sabay yung school, work, at content, kinaya. Ganito rin yung ituturo ko sa'yo.</p>
         <div class="cta-row">
-          <a class="btn" href="#apply" data-en="Apply now &lt;span class=&quot;arr&quot;&gt;→&lt;/span&gt;">Mag-apply <span class="arr">→</span></a>
-          <a class="link" href="#rates" data-en="See the rates">Tingnan yung rates</a>
+          <a class="btn" href="#apply" data-en="Find out why you’re stuck &lt;span class=&quot;arr&quot;&gt;→&lt;/span&gt;">Alamin kung bakit ka stuck <span class="arr">→</span></a>
+          <a class="link" href="#start" data-en="How it works">Paano 'to gumagana</a>
         </div>
         <ul class="creds">
           <li><b>Champion</b><span>Natural Classic Physique and Bodybuilding</span></li>
@@ -322,7 +335,7 @@ footer .big span{color:var(--accent)}
       <li class="reveal" data-en="You follow what you see on TikTok, but everyone says something different, so you just get more confused.">Sinusunod mo yung mga nakikita mo sa TikTok, pero magkakaiba sila ng sinasabi kaya lalo kang nalilito.</li>
       <li class="reveal" data-en="You&#x27;re busy with school or work, so balancing training and life feels impossible.">Busy ka sa school o work, kaya parang imposible pagsabayin yung training at buhay mo.</li>
     </ul>
-    <p class="after reveal" data-en="&lt;b&gt;If you relate to even one, that&#x27;s normal.&lt;/b&gt; Almost all of my clients started there."><b>Kung relate ka kahit sa isa, normal 'yan.</b> Halos lahat ng naging clients ko, dyan nagsimula.</p>
+    <p class="after reveal" data-en="&lt;b&gt;If you relate to even one, that&#x27;s normal.&lt;/b&gt; Almost all of my clients started there. &lt;a class=&quot;link&quot; href=&quot;#apply&quot;&gt;Find out which one is yours →&lt;/a&gt;"><b>Kung relate ka kahit sa isa, normal 'yan.</b> Halos lahat ng naging clients ko, dyan nagsimula. <a class="link" href="#apply">Alamin kung alin yung sa'yo →</a></p>
   </section>
 
   <section class="container" style="padding-top:0">
@@ -363,63 +376,23 @@ footer .big span{color:var(--accent)}
 
   <section id="rates" class="dark">
     <div class="container">
-      <div class="sec-head label"><span>Rates</span><span>05</span></div>
-      <h2 class="display rates-h" data-en="Longer plan, &lt;em&gt;better value.&lt;/em&gt;">Mas mahaba, <em>mas sulit.</em></h2>
+      <div class="sec-head label"><span>Investment</span><span>05</span></div>
+      <h2 class="display rates-h" data-en="Every goal is different. &lt;em&gt;Let’s talk first.&lt;/em&gt;">Iba-iba ang goal. <em>Usap muna tayo.</em></h2>
       <figure class="shot"><video src="rates.mp4" poster="rates.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Narz, nagfle-flex" data-en-aria="Narz, flexing"></video></figure>
-
-      <div class="seg-wrap"><div class="seg" role="tablist" data-i="0" id="seg">
-        <span class="thumb"></span>
-        <button role="tab" aria-selected="true" data-p="0">Online coaching</button>
-        <button role="tab" aria-selected="false" data-p="1">Posing</button>
-      </div></div>
-
-      <div class="panel" id="p0">
-        <div class="plans">
-          <div class="plan">
-            <h3>1 Month</h3><div class="price">₱3,500</div>
-            <div class="terms">One-time payment</div><div class="save"><span class="day">≈ ₱117</span> / day</div>
-          </div>
-          <div class="plan feat">
-            <div class="tag">Recommended</div>
-            <h3>3 Months</h3><div class="was"><s>₱10,500</s></div><div class="price">₱9,000</div>
-            <div class="terms">₱4,500 × 2 &nbsp;|&nbsp; ₱2,000 down + ₱3,500 × 2</div><div class="save"><span class="day">₱100</span> / day · <b>save ₱1,500</b></div>
-          </div>
-          <div class="plan">
-            <h3>6 Months</h3><div class="was"><s>₱21,000</s></div><div class="price">₱16,500</div>
-            <div class="terms">₱8,250 × 2 &nbsp;|&nbsp; ₱5,500 × 3</div><div class="save"><span class="day">≈ ₱92</span> / day · <b>save ₱4,500</b></div>
-          </div>
-          <div class="plan">
-            <h3>1 Year</h3><div class="was"><s>₱42,000</s></div><div class="price">₱30,000</div>
-            <div class="terms">₱7,500 per quarter</div><div class="save"><span class="day">≈ ₱82</span> / day · <b>save ₱12,000</b></div>
-          </div>
+      <div class="invest">
+        <p class="invest-p" data-en="I don’t hand out a plan without knowing your situation. On a free call, I’ll ask about your goal, what you’ve tried, and why it didn’t work. Then I’ll tell you which plan fits you, or if I’m not the right coach for you.">Hindi ako nagbibigay ng plan nang hindi ko alam yung situation mo. Sa free call, aalamin ko yung goal mo, yung mga nasubukan mo na, at kung bakit hindi nag-work. Tapos sasabihin ko kung anong plan ang swak sa'yo, o kung hindi ako yung tamang coach para sa'yo.</p>
+        <div class="from">
+          <div><span class="label">Online coaching</span><p><b>as low as ₱82</b> / day</p></div>
+          <div><span class="label">Posing</span><p><b>from ₱700</b> / session</p></div>
         </div>
-        <p class="day-note" data-en="On 3 months, it&#x27;s just &lt;span&gt;₱100 per day&lt;/span&gt;. Cheaper than an iced coffee.">Sa 3 months, <span>₱100 per day</span> lang. Mas mura pa sa isang iced coffee.</p>
+        <a class="btn full" href="#apply" data-en="Book a free call &lt;span class=&quot;arr&quot;&gt;→&lt;/span&gt;">Mag-book ng free call <span class="arr">→</span></a>
         <div class="guarantee">
           <span class="label">14-day guarantee</span>
-          <h3 data-en="Try it first. If it&#x27;s not for you, full refund.">Try mo muna. Kung hindi para sa'yo, full refund.</h3>
-          <p data-en="In your first 14 days of coaching, if you feel we&#x27;re not a fit, just tell me and I&#x27;ll refund your full payment. No hassle, no questions. The risk is on me.">Sa first 14 days ng coaching, kung feel mo na hindi tayo bagay, sabihan mo lang ako at ibabalik ko yung buong bayad mo. Walang hassle, walang tanong. Ako na sasalo ng risk.</p>
+          <h3 data-en="Try it first. If it’s not for you, full refund.">Try mo muna. Kung hindi para sa'yo, full refund.</h3>
+          <p data-en="In your first 14 days of coaching, if you feel we’re not a fit, just tell me and I’ll refund your full payment. No hassle, no questions. The risk is on me.">Sa first 14 days ng coaching, kung feel mo na hindi tayo bagay, sabihan mo lang ako at ibabalik ko yung buong bayad mo. Walang hassle, walang tanong. Ako na sasalo ng risk.</p>
         </div>
-              </div>
-
-      <div class="panel" id="p1" hidden>
-        <div class="plans">
-          <div class="plan">
-            <h3>1 Session</h3><div class="price">₱800</div>
-            <div class="terms">45–60 mins: online / in person</div><div class="save">₱800 / session</div>
-          </div>
-          <div class="plan">
-            <h3>4 Sessions</h3><div class="was"><s>₱3,200</s></div><div class="price">₱2,800</div>
-            <div class="terms" data-en="Use them anytime before your show">Gamitin mo kahit kailan bago yung show</div><div class="save">₱700 / session · <b>save ₱400</b></div>
-          </div>
-          <div class="plan feat">
-            <div class="tag" data-en="For show day">Pang-show</div>
-            <h3>Show Package</h3><div class="price">₱4,500</div>
-            <div class="terms">4 sessions + unlimited video posing review + posing routine</div><div class="save" data-en="For athletes with a target show">Para sa may target na show</div>
-          </div>
-        </div>
+        <p class="pay-note muted" data-en="Payment via GCash / Maya / bank transfer. Installments available.">Payment via GCash / Maya / bank transfer. Pwedeng installment.</p>
       </div>
-
-      <p class="pay-note muted">Payment via GCash / Maya / bank transfer.</p>
     </div>
   </section>
 
@@ -446,19 +419,20 @@ footer .big span{color:var(--accent)}
     </div>
   </section>
 
-  <section class="container" style="padding-top:0">
+  <section id="start" class="container" style="padding-top:0">
     <div class="sec-head label"><span data-en="How to start">Paano mag-start</span><span>07</span></div>
     <div class="steps">
-      <div class="step reveal"><span class="label">Step 1</span><h3 data-en="Apply">Mag-apply</h3><p data-en="Just 7 questions, a few taps. Then it goes straight to my IG or Messenger.">7 questions lang, few taps. Tapos diretso na sa IG or Messenger ko.</p></div>
-      <div class="step reveal"><span class="label">Step 2</span><h3 data-en="We talk first">Usap muna tayo</h3><p data-en="I&#x27;ll look at your goal and situation. If I&#x27;m not the right coach for you, I&#x27;ll tell you right away.">Titingnan ko yung goal at situation mo. Kung hindi ako yung tamang coach para sa'yo, sasabihin ko na agad.</p></div>
-      <div class="step reveal"><span class="label">Step 3</span><h3 data-en="Let&#x27;s go">Start na</h3><p data-en="After payment, you&#x27;ll get your macros and program within 48 hours.">After ng payment, makukuha mo yung macros at program mo within 48 hours.</p></div>
+      <div class="step reveal"><span class="label">Step 1</span><h3 data-en="Take the 1-min quiz">1-min quiz</h3><p data-en="A few taps. At the end you’ll see what’s most likely holding you back.">Ilang taps lang. Sa dulo, makikita mo kung ano yung pinaka-pumipigil sa progress mo.</p></div>
+      <div class="step reveal"><span class="label">Step 2</span><h3 data-en="Free call, 15–20 mins">Free call, 15–20 mins</h3><p data-en="We talk about your goal and situation. No pressure. If I’m not the right coach for you, I’ll tell you right away.">Pag-uusapan natin yung goal at situation mo. Walang pressure. Kung hindi ako yung tamang coach para sa'yo, sasabihin ko na agad.</p></div>
+      <div class="step reveal"><span class="label">Step 3</span><h3 data-en="Let’s go">Start na</h3><p data-en="If we’re a fit, you’ll get your macros and program within 48 hours after payment.">Kung swak tayo, makukuha mo yung macros at program mo within 48 hours after ng payment.</p></div>
     </div>
   </section>
 
   <section id="apply" class="apply">
     <div class="container">
-      <div class="sec-head label"><span>Apply</span><span>08</span></div>
-      <h2 class="display" style="margin-bottom:28px" data-en="Let&#x27;s get started.">Tara, start na.</h2>
+      <div class="sec-head label"><span data-en="1-min quiz">1-min quiz</span><span>08</span></div>
+      <h2 class="display" style="margin-bottom:12px" data-en="Why aren’t you seeing progress?">Bakit hindi ka pa nagbabago?</h2>
+      <p class="after" style="margin:0 0 28px" data-en="Answer honestly. At the end, you’ll see what’s most likely holding you back, and you can book a free call.">Sagutin mo nang totoo. Sa dulo, makikita mo kung ano yung pinaka-pumipigil sa'yo, tapos pwede kang mag-book ng free call.</p>
       <div class="quiz" id="quiz" aria-live="polite"></div>
     </div>
   </section>
@@ -472,10 +446,11 @@ footer .big span{color:var(--accent)}
       <details><summary data-en="&quot;I&#x27;m a beginner / I don&#x27;t work out yet.&quot;">"Beginner pa lang ako / hindi pa ako nagwo-workout."</summary><p data-en="Even better. You&#x27;ll learn the right habits early, before the wrong ones stick. We&#x27;ll start from zero, step by step.">Mas okay nga yun, kasi maaga mong matututunan yung tamang habits bago ka masanay sa mali. Start tayo from zero, step by step.</p></details>
       <details><summary data-en="&quot;Is it online only?&quot;">"Online lang ba?"</summary><p data-en="Yes, coaching is online, so it works anywhere in the Philippines. Posing sessions can be online or in person in Cavite.">Yes, online yung coaching kaya kahit saan ka sa Pilipinas. Yung posing sessions, pwedeng online / in person sa Cavite.</p></details>
       <details><summary data-en="&quot;What if it&#x27;s not for me?&quot;">"Paano kung hindi pala para sa akin?"</summary><p data-en="There&#x27;s a 14-day guarantee. In the first 14 days, if you feel we&#x27;re not a fit, full refund.">May 14-day guarantee. Sa first 14 days, kung feel mo hindi tayo bagay, full refund.</p></details>
-      <details><summary data-en="&quot;How do I pay?&quot;">"Paano yung payment?"</summary><p data-en="GCash, Maya, or bank transfer. The 3, 6, and 12-month plans can be paid in installments.">GCash, Maya, or bank transfer. Pwedeng installment yung 3, 6, at 12-month plans.</p></details>
+      <details><summary data-en="&quot;How much is it?&quot;">"Magkano?"</summary><p data-en="Online coaching is as low as ₱82 a day, depending on how long the plan is. Posing starts at ₱700 a session. On the free call, I’ll tell you which plan fits your goal and budget. No pressure.">Online coaching, as low as ₱82 / day depende sa haba ng plan. Posing, from ₱700 / session. Sa free call, sasabihin ko kung anong plan ang swak sa goal at budget mo. Walang pressure.</p></details>
+      <details><summary data-en="&quot;How do I pay?&quot;">"Paano yung payment?"</summary><p data-en="GCash, Maya, or bank transfer. Longer plans can be paid in installments.">GCash, Maya, or bank transfer. Pwedeng installment yung mas mahahabang plans.</p></details>
     </div>
     <div class="ps reveal">
-      <p data-en="&lt;b&gt;P.S.&lt;/b&gt; You don&#x27;t have to suffer to get the physique you want. You just need a plan you can actually follow. If you&#x27;re ready, &lt;a href=&quot;#apply&quot;&gt;apply here&lt;/a&gt;. Just 7 questions."><b>P.S.</b> Hindi mo kailangan mag-suffer para makuha yung physique na gusto mo. Kailangan mo lang ng plan na kaya mong sundan. Kung ready ka na, <a href="#apply">mag-apply ka dito</a>. 7 questions lang.</p>
+      <p data-en="&lt;b&gt;P.S.&lt;/b&gt; You don&#x27;t have to suffer to get the physique you want. You just need a plan you can actually follow. Start with the &lt;a href=&quot;#apply&quot;&gt;1-min quiz&lt;/a&gt;, then let&#x27;s talk on a free call."><b>P.S.</b> Hindi mo kailangan mag-suffer para makuha yung physique na gusto mo. Kailangan mo lang ng plan na kaya mong sundan. Start ka sa <a href="#apply">1-min quiz</a>, tapos usap tayo sa free call.</p>
     </div>
   </section>
 </main>
@@ -492,7 +467,7 @@ footer .big span{color:var(--accent)}
 
 <div class="dock" id="dock">
   <p><b>Online coaching</b>as low as ₱82 / day</p>
-  <a class="btn" href="#apply" data-en="Apply">Mag-apply</a>
+  <a class="btn" href="#apply" data-en="Free call">Free call</a>
 </div>
 
 <script>
@@ -500,7 +475,8 @@ const IG = "naarrzz";
 const FB = "naarrzz"; // Messenger username (m.me/USERNAME). Empty = IG only.
 let LANG = localStorage.getItem("lang") === "en" ? "en" : "fil";
 
-/* Quiz. Each option: [Taglish, Taglish sub, English, English sub] */
+/* Quiz. Each option: [Taglish, Taglish sub, English, English sub, result key?]
+   Question "only" = show only when goal is "posing" / "coach" (not posing). */
 const Q = [
   {k:"goal", t:"Ano ang goal mo?", te:"What's your goal?", h:"Piliin ang pinakamalapit.", he:"Pick the closest one.", o:[
     ["Magbawas ng taba","Cut / fat loss","Lose fat","Cut / fat loss"],
@@ -510,58 +486,107 @@ const Q = [
   {k:"exp", t:"Gaano ka na katagal nagwo-workout?", te:"How long have you been working out?", o:[
     ["Hindi pa ako nagwo-workout","Start tayo from zero","I don't work out yet","We'll start from zero"],
     ["Nag-workout dati pero tumigil","Babalik ulit","I used to work out but stopped","Getting back into it"],
-    ["Kakasimula lang","Below 6 months","Just started","Below 6 months"],
+    ["Below 6 months","","Below 6 months",""],
     ["6 months to 2 years","","6 months to 2 years",""],
     ["2 years pataas","","2 years or more",""],
     ["Nakapag-compete na","","I've competed before",""]]},
-  {k:"days", t:"Ilang days mo kaya mag-train per week?", te:"How many days a week can you train?", h:"Yung totoo ha.", he:"Be honest.", o:[
-    ["3 days","","3 days",""],["4 days","","4 days",""],["5 days","","5 days",""],["6 days pataas","","6 days or more",""]]},
-  {k:"food", t:"Paano ka kumain ngayon?", te:"How do you eat right now?", o:[
-    ["Bahala na","Walang tracking","Whatever's there","No tracking"],
-    ["Nagta-track minsan","Hindi consistent","I track sometimes","Not consistent"],
-    ["Nagta-track ng macros","","I track my macros",""],
-    ["Nag-diet na dati pero hindi tumagal","","I've dieted before but it didn't last",""]]},
-  {k:"style", t:"Anong style ang gusto mo?", te:"Which style do you want?", o:[
-    ["Flexible macros","Ako bahala kung ano kakainin ko, basta pasok","Flexible macros","I choose my food, as long as it fits"],
-    ["Meal plan","Sabihin mo na lang kung ano kakainin ko","Meal plan","Just tell me what to eat"],
-    ["Hindi pa sure","Tulungan mo ako pumili","Not sure yet","Help me choose"]]},
-  {k:"plan", t:"Anong plan yung balak mo?", te:"Which plan are you considering?", h:"Okay lang kung hindi ka pa sure.", he:"It's okay if you're not sure yet.", o:[
-    ["1 month","₱3,500","1 month","₱3,500"],
-    ["3 months","₱9,000, pwedeng installment","3 months","₱9,000, installments available"],
-    ["6 months / 1 year","Pinaka-sulit per month","6 months / 1 year","Best value per month"],
-    ["Posing","₱800 pataas","Posing","From ₱800"],
-    ["Hindi pa sure","Gusto ko muna magtanong","Not sure yet","I'd like to ask first"]]},
+  {k:"pain", only:"coach", t:"Ano yung pinaka-struggle mo?", te:"What's your biggest struggle?", h:"Isa lang, yung pinaka-totoo.", he:"Just one, the most honest one.", o:[
+    ["Pagkain","Hindi ko alam kung ano at gaano karami kakainin","Food","I don't know what or how much to eat","food"],
+    ["Consistency","Alam ko naman, pero hindi ko masundan nang tuloy-tuloy","Consistency","I know what to do, but I can't stick with it","consistency"],
+    ["Training","Nagte-train ako pero parang walang epekto","Training","I train, but it doesn't seem to work","training"]]},
+  {k:"pain", only:"posing", t:"Ano yung pinaka-struggle mo sa posing?", te:"What's your biggest struggle with posing?", h:"Isa lang, yung pinaka-totoo.", he:"Just one, the most honest one.", o:[
+    ["Execution","Hindi ko alam yung tamang mandatory poses","Execution","I don't know the right mandatory poses","p-exec"],
+    ["Hindi lumalabas","Alam ko, pero hindi lumalabas physique ko sa pics o video","It doesn't show","I know them, but my physique doesn't show in photos or video","p-show"],
+    ["Hold","Nanginginig ako o nagka-cramp, hindi ko ma-hold","Holding","I shake or cramp, I can't hold the poses","p-hold"],
+    ["Routine","Transitions at routine (Classic / BB)","Routine","Transitions and routine (Classic / BB)","p-routine"]]},
+  {k:"tried", only:"coach", t:"Ano na yung nasubukan mo?", te:"What have you tried so far?", o:[
+    ["Sariling diet o program","Galing sa YouTube / TikTok","My own diet or program","From YouTube / TikTok"],
+    ["Nagka-coach na ako dati","","I've had a coach before",""],
+    ["Paulit-ulit akong nagsisimula","Tapos tumitigil din","I keep starting over","Then I stop again"],
+    ["Wala pa talaga","","Nothing yet, really",""]]},
+  {k:"div", only:"posing", t:"Anong category mo?", te:"What's your category?", o:[
+    ["Men's Physique","","Men's Physique",""],
+    ["Classic Physique","","Classic Physique",""],
+    ["Bodybuilding","","Bodybuilding",""],
+    ["Iba / hindi pa sure","","Other / not sure yet",""]]},
+  {k:"when", only:"posing", t:"Kailan yung show mo?", te:"When is your show?", o:[
+    ["Within 6 weeks","","Within 6 weeks",""],
+    ["2 to 4 months pa","","2 to 4 months away",""],
+    ["Wala pang date","","No date yet",""]]},
+  {k:"why", only:"coach", t:"Bakit ngayon?", te:"Why now?", h:"Ano yung nagtulak sa'yo para seryosohin 'to?", he:"What made you want to take this seriously?", o:[
+    ["May event o deadline","Show, kasal, bakasyon, birthday","I have an event or deadline","Show, wedding, trip, birthday"],
+    ["Sawa na ako sa itsura ko","","I'm tired of how I look",""],
+    ["Health o energy","","Health or energy",""],
+    ["Matagal ko na 'tong iniisip","Gusto ko nang simulan talaga","I've been thinking about this for a while","I want to actually start"]]},
+  {k:"invest", t:"Kung swak tayo, ready ka bang mag-invest sa coaching ngayon?", te:"If we're a fit, are you ready to invest in coaching now?", h:"Walang tamang sagot. Para lang alam ko.", he:"There's no wrong answer. It just helps me.", o:[
+    ["Oo, ready na ako","","Yes, I'm ready",""],
+    ["Sa susunod na 1–2 buwan","","In the next 1–2 months",""],
+    ["Hindi pa","Gusto ko muna matuto","Not yet","I'd like to learn first"]]},
   {k:"info", form:true, t:"Sino ka?", te:"Who are you?", h:"Huling tanong na.", he:"Last one."}
 ];
+/* Results: what's most likely holding them back + what we'd do (from the call script) */
+const R = {
+  food:{t:"Hindi ka kulang sa disiplina. Kulang ka sa malinaw na numbers.", te:"You don't lack discipline. You lack clear numbers.",
+    p:"Kapag hindi mo alam kung gaano karami dapat kainin, hula lang lahat. Kaya pabago-bago yung resulta.", pe:"When you don't know how much to eat, it's all guesswork. That's why your results keep changing.",
+    l:["Ako na magse-set ng calories at macros mo","Tuturuan kita mag-track, o meal plan kung ayaw mo mag-isip","Pwede pa rin yung rice at fast food, basta pasok"],
+    le:["I set your calories and macros","I'll teach you to track, or give you a meal plan if you'd rather not think about it","Rice and fast food still fit, as long as they fit"]},
+  consistency:{t:"Hindi ka kulang sa info. Kulang ka sa system na kaya mong sundan.", te:"You don't lack info. You lack a system you can actually follow.",
+    p:"Alam mo naman yung dapat gawin. Ang problema, walang nagche-check kaya bumabalik ka sa umpisa.", pe:"You already know what to do. The problem is nobody checks in, so you keep going back to square one.",
+    l:["Weekly check-in para hindi ka bumalik sa umpisa","Plan na kasya sa schedule mo, hindi yung sobrang strict","Chat support kapag nadudulas ka"],
+    le:["Weekly check-ins so you don't slide back to zero","A plan that fits your schedule, not an overly strict one","Chat support when you start slipping"]},
+  training:{t:"Hindi kulang yung effort mo. Mali lang yung direction.", te:"Your effort isn't the problem. The direction is.",
+    p:"Kung ilang buwan ka nang nagte-train pero walang nagbabago, kadalasan walang progression o hindi swak yung program sa goal mo.", pe:"If you've trained for months with no change, there's usually no progression, or the program doesn't fit your goal.",
+    l:["Program na fit sa schedule at goal mo","Form check gamit yung videos mo","Progression na tine-track natin every week"],
+    le:["A program that fits your schedule and goal","Form checks from your videos","Progression we track every week"]},
+  "p-exec":{t:"Kailangan mo ng tamang basics bago ang lahat.", te:"You need the right basics first.",
+    p:"Kapag mali yung execution ng mandatory poses, kahit maganda yung physique mo, hindi yun makikita ng judges.", pe:"If your mandatory poses are off, judges won't see your physique, however good it is.",
+    l:["Isa-isahin natin yung mandatory poses at transitions","Video review bawat linggo","Baseline video para kita mo yung improvement"],
+    le:["We go through every mandatory pose and transition","Weekly video review","A baseline video so you can see the improvement"]},
+  "p-show":{t:"Hindi problema yung physique mo. Yung angles.", te:"Your physique isn't the problem. Your angles are.",
+    p:"Ilang buwan kang nag-diet at nag-train, pero ilang minuto lang yung nasa stage. Posing ang magpapakita ng pinaghirapan mo.", pe:"You dieted and trained for months, but you're on stage for minutes. Posing is what shows the work.",
+    l:["Aayusin natin yung angles para lumabas yung strengths mo","Itatago natin yung weak points","Video review hanggang malinis"],
+    le:["We fix your angles so your strengths show","We hide your weak points","Video reviews until it's clean"]},
+  "p-hold":{t:"Kailangan sanay na yung katawan mo bago ang show day.", te:"Your body needs to be used to it before show day.",
+    p:"Kapag pagod at gutom ka na sa prep, mas mahirap mag-hold. Kaya kailangan itong i-practice nang maaga.", pe:"Holding gets harder when you're tired and hungry from prep. That's why you practice early.",
+    l:["Holding drills every week","Breathing at pacing sa stage","Video review para makita natin kung saan bumibigay"],
+    le:["Holding drills every week","Breathing and pacing on stage","Video reviews to see where you break"]},
+  "p-routine":{t:"Kailangan mo ng routine na bagay sa physique mo.", te:"You need a routine that fits your physique.",
+    p:"Sa Classic at BB, yung routine at transitions ang unang napapansin. Dapat smooth at pinapakita yung best mo.", pe:"In Classic and BB, the routine and transitions get noticed first. They should be smooth and show your best.",
+    l:["Routine na bagay sa physique mo, pati music","Transitions na malinis","Unlimited video review hanggang show day"],
+    le:["A routine built for your physique, music included","Clean transitions","Unlimited video review until show day"]}
+};
 const UI = {
   fil:{tap:"Tap mo lang.", back:"← Back", done:"Tapos na", name:"Pangalan", age:"Edad", note:"May gusto ka pang i-share? (injury, schedule, show date)",
-       finish:"Tapos na", thanks:"Salamat", sendHint:"Send mo lang 'to sa DM ko. Pag tap mo ng button, naka-copy na yung message tapos magbubukas yung app. Paste mo lang.",
-       ig:"Send sa Instagram", fb:"Send sa Messenger", fine:"Usually nagre-reply ako within the day.", copied:"Copied! Opening… ",
-       msg:["Hi Narz! Nag-apply ako sa site mo.","Pangalan","Goal","Experience","Training","per week","Pagkain","Style","Plan","Notes"]},
+       finish:"Tingnan ang resulta", res:"Ang resulta mo", fix:"Ito yung gagawin natin:", book:"Mag-book ng free call (15–20 mins). Pag tap mo ng button, naka-copy na yung message tapos magbubukas yung app. Paste mo lang.",
+       ig:"Book sa Instagram", fb:"Book sa Messenger", fine:"Usually nagre-reply ako within the day. Walang pressure sa call.", copied:"Copied! Opening… ",
+       msg:["Hi Narz! Sinagutan ko yung quiz sa site mo. Gusto ko mag-book ng free call.","Pangalan","Goal","Experience","Struggle","Nasubukan","Show","Bakit ngayon","Ready mag-invest","Notes","Resulta","Category"]},
   en: {tap:"Just tap one.", back:"← Back", done:"Done", name:"Name", age:"Age", note:"Anything else? (injuries, schedule, show date)",
-       finish:"Done", thanks:"Thanks", sendHint:"Just send this to my DMs. When you tap a button, the message is copied and the app opens. Then paste it.",
-       ig:"Send on Instagram", fb:"Send on Messenger", fine:"I usually reply within the day.", copied:"Copied! Opening… ",
-       msg:["Hi Narz! I applied through your site.","Name","Goal","Experience","Training","per week","Eating","Style","Plan","Notes"]}
+       finish:"See my result", res:"Your result", fix:"Here's what we'd do:", book:"Book a free call (15–20 mins). When you tap a button, the message is copied and the app opens. Then paste it.",
+       ig:"Book on Instagram", fb:"Book on Messenger", fine:"I usually reply within the day. No pressure on the call.", copied:"Copied! Opening… ",
+       msg:["Hi Narz! I took the quiz on your site. I'd like to book a free call.","Name","Goal","Experience","Struggle","Tried","Show","Why now","Ready to invest","Notes","Result","Category"]}
 };
 const A = {}; let i = 0;
 const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const L = "ABCDEF";
 const ui = () => UI[LANG];
+const track = () => A.goal === 3 ? "posing" : "coach";
+const steps = () => Q.filter(q => !q.only || q.only === track());
 const qt = (q, k) => LANG === "en" ? q[k + "e"] : q[k];
 const opt = (q, n) => LANG === "en" ? [q.o[n][2], q.o[n][3]] : [q.o[n][0], q.o[n][1]];
-const ans = k => { const q = Q.find(x => x.k === k); return A[k] == null ? "" : opt(q, A[k])[0]; };
+const ans = k => { const q = steps().find(x => x.k === k); return !q || A[k] == null || !q.o[A[k]] ? "" : opt(q, A[k])[0]; };
+const resultKey = () => { const q = steps().find(x => x.k === "pain"); return q && A.pain != null && q.o[A.pain] ? q.o[A.pain][4] : (track() === "posing" ? "p-exec" : "consistency"); };
 
 function head(){
-  const n = Math.min(i + 1, Q.length);
+  const S = steps(), n = Math.min(i + 1, S.length);
   return `<div class="q-top"><button class="q-back" onclick="back()" ${i===0?"disabled":""}>${ui().back}</button>
-    <span class="q-count">${String(n).padStart(2,"0")} / ${String(Q.length).padStart(2,"0")}</span></div>
-    <div class="prog"><i style="width:${(i/Q.length)*100}%"></i></div>`;
+    <span class="q-count">${String(n).padStart(2,"0")} / ${String(S.length).padStart(2,"0")}</span></div>
+    <div class="prog"><i style="width:${(i/S.length)*100}%"></i></div>`;
 }
 function render(){
-  const el = $("#quiz");
-  if (i >= Q.length) return done(el);
-  const q = Q[i];
+  const el = $("#quiz"), S = steps();
+  if (i >= S.length) return done(el);
+  const q = S[i];
   let body;
   if (q.form){
     body = `<p class="q-title">${qt(q,"t")}</p><p class="q-hint">${qt(q,"h")}</p>
@@ -576,34 +601,36 @@ function render(){
   el.innerHTML = `<div class="fade">${head()}${body}</div>`;
 }
 function pick(n){
-  A[Q[i].k] = n;
+  const q = steps()[i];
+  if (q.k === "goal" && A.goal !== n && ((A.goal === 3) !== (n === 3))) { delete A.pain; } // switching track resets the struggle
+  A[q.k] = n;
   document.querySelectorAll(".opt").forEach((b,m)=>b.classList.toggle("on", m===n));
   setTimeout(()=>{ i++; render(); }, 200);
 }
 function saveForm(){ if (!$("#f-name")) return; A.name=$("#f-name").value.trim(); A.age=$("#f-age").value.trim(); A.note=$("#f-note").value.trim(); }
-function back(){ saveForm(); if (i>0){ i--; render(); } }
+function back(){ saveForm(); if (i>0){ i--; render(); $("#quiz").scrollIntoView({block:"nearest"}); } }
 function finish(){
   saveForm();
   if (!A.name){ $("#f-name").focus(); $("#f-name").style.borderBottomColor="var(--accent)"; return; }
-  i++; render();
+  i++; render(); $("#quiz").scrollIntoView({behavior:"smooth", block:"start"});
 }
 function message(){
-  const m = ui().msg;
+  const m = ui().msg, r = R[resultKey()], P = track() === "posing";
+  const line = (label, v) => v ? `\n${label}: ${v}` : "";
   return `${m[0]}
-
-${m[1]}: ${A.name}${A.age?`, ${A.age}`:""}
-${m[2]}: ${ans("goal")}
-${m[3]}: ${ans("exp")}
-${m[4]}: ${ans("days")} ${m[5]}
-${m[6]}: ${ans("food")}
-${m[7]}: ${ans("style")}
-${m[8]}: ${ans("plan")}${A.note?`\n${m[9]}: ${A.note}`:""}`;
+${line(m[1], A.name + (A.age ? `, ${A.age}` : ""))}${line(m[2], ans("goal"))}${line(m[3], ans("exp"))}${line(m[4], ans("pain"))}${P ? line(m[11], ans("div")) + line(m[6], ans("when")) : line(m[5], ans("tried")) + line(m[7], ans("why"))}${line(m[8], ans("invest"))}${line(m[9], A.note)}
+${m[10]}: ${LANG === "en" ? r.te : r.t}`;
 }
 function done(el){
+  const r = R[resultKey()], en = LANG === "en";
   el.innerHTML = `<div class="fade"><div class="q-top"><button class="q-back" onclick="back()">${ui().back}</button><span class="q-count">${ui().done}</span></div>
     <div class="prog"><i style="width:100%"></i></div>
-    <p class="q-title">${ui().thanks}, ${esc(A.name.split(" ")[0])}.</p>
-    <p class="q-hint">${ui().sendHint}</p>
+    <span class="label res-tag">${ui().res}, ${esc(A.name.split(" ")[0])}</span>
+    <p class="q-title">${en ? r.te : r.t}</p>
+    <p class="q-hint" style="color:var(--ink-2);font-size:16px">${en ? r.pe : r.p}</p>
+    <p class="q-hint" style="margin-bottom:0"><b>${ui().fix}</b></p>
+    <ul class="res-list">${(en ? r.le : r.l).map(x => `<li>${x}</li>`).join("")}</ul>
+    <p class="q-hint">${ui().book}</p>
     <div class="msg">${esc(message())}</div>
     <button class="btn full" data-go="ig">${ui().ig} <span class="arr">→</span></button>
     ${FB?`<button class="btn full alt" data-go="fb">${ui().fb} <span class="arr">→</span></button>`:""}
@@ -648,15 +675,6 @@ setLang(LANG);
   }
   build(); let t; addEventListener("resize", () => { clearTimeout(t); t = setTimeout(build, 200); });
 })();
-
-/* segmented control */
-const seg = $("#seg");
-seg.addEventListener("click", e => {
-  const b = e.target.closest("button"); if (!b) return;
-  const p = b.dataset.p; seg.dataset.i = p;
-  seg.querySelectorAll("button").forEach(x => x.setAttribute("aria-selected", x===b));
-  $("#p0").hidden = p!=="0"; $("#p1").hidden = p!=="1";
-});
 
 /* header border, dock, reveals */
 const bar = $("#bar"), dock = $("#dock"), apply = $("#apply"), hero = document.querySelector(".hero");
