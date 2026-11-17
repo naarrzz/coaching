@@ -645,8 +645,7 @@ function done(el){
     <p class="q-fine">${ui().fine}</p></div>`;
   el.querySelectorAll("[data-go]").forEach(b => b.onclick = async () => {
     lead({event:"dm", via:b.dataset.go}); try { await navigator.clipboard.writeText(message()); b.firstChild.textContent = ui().copied; } catch(e){}
-    const mobile = /iPhone|iPad|Android/i.test(navigator.userAgent); // ig.me can hang on desktop; profile has a Message button
-    const url = b.dataset.go === "fb" ? `https://m.me/${FB}` : mobile ? `https://ig.me/m/${IG}` : `https://www.instagram.com/${IG}/`;
+    const url = b.dataset.go === "fb" ? `https://m.me/${FB}` : `https://ig.me/m/${IG}`;
     setTimeout(()=>{ location.href = url; }, 600);
   });
 }
