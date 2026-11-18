@@ -581,7 +581,7 @@ const steps = () => Q.filter(q => !q.only || q.only === track());
 const qt = (q, k) => LANG === "en" ? q[k + "e"] : q[k];
 const opt = (q, n) => LANG === "en" ? [q.o[n][2], q.o[n][3]] : [q.o[n][0], q.o[n][1]];
 const ans = k => { const q = steps().find(x => x.k === k); return !q || A[k] == null || !q.o[A[k]] ? "" : opt(q, A[k])[0]; };
-const ansEn = k => { const q = steps().find(x => x.k === k); return !q || A[k] == null || !q.o[A[k]] ? "" : q.o[A[k]][2]; };
+const ansFil = k => { const q = steps().find(x => x.k === k); return !q || A[k] == null || !q.o[A[k]] ? "" : q.o[A[k]][0]; };
 const resultKey = () => { const q = steps().find(x => x.k === "pain"); return q && A.pain != null && q.o[A.pain] ? q.o[A.pain][4] : (track() === "posing" ? "p-exec" : "consistency"); };
 
 function head(){
@@ -630,7 +630,7 @@ ${m[10]}: ${LANG === "en" ? r.te : r.t}`;
 }
 function done(el){
   const r = R[resultKey()], en = LANG === "en";
-  lead({track: track(), lang: LANG, result: r.te, a: {name: A.name, age: A.age, note: A.note, goal: ansEn("goal"), exp: ansEn("exp"), pain: ansEn("pain"), tried: ansEn("tried"), why: ansEn("why"), div: ansEn("div"), when: ansEn("when"), invest: ansEn("invest")}});
+  lead({track: track(), lang: LANG, result: r.t, a: {name: A.name, age: A.age, note: A.note, goal: ansFil("goal"), exp: ansFil("exp"), pain: ansFil("pain"), tried: ansFil("tried"), why: ansFil("why"), div: ansFil("div"), when: ansFil("when"), invest: ansFil("invest")}});
   el.innerHTML = `<div class="fade"><div class="q-top"><button class="q-back" onclick="back()">${ui().back}</button><span class="q-count">${ui().done}</span></div>
     <div class="prog"><i style="width:100%"></i></div>
     <span class="label res-tag">${ui().res}, ${esc(A.name.split(" ")[0])}</span>
